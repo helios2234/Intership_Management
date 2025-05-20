@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tableau de bord Superviseur</title>
+  <link rel="stylesheet" href="page_encadreur.css" />
+</head>
+<body>
+  <header>
+    <h1>Tableau de bord Superviseur</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#etudiants" class="nav-link">Gestion des étudiants</a></li>
+      <li><a href="#rapports" class="nav-link">Validation des rapports</a></li>
+      <li><a href="#commentaires" class="nav-link">Envoyer commentaires</a></li>
+      <li><a href="#planning" class="nav-link">Consulter planning</a></li>
+      <li><a href="#feedbacks" class="nav-link">Historique feedbacks</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="etudiants" class="window">
+      <h2>Gestion des étudiants</h2>
+      <form id="etudiants-form">
+        <label for="nomEtudiant">Nom complet :</label>
+        <input type="text" id="nomEtudiant" name="nomEtudiant" required />
+
+        <label for="filiere">Filière :</label>
+        <input type="text" id="filiere" name="filiere" required />
+
+        <label for="niveau">Niveau :</label>
+        <input type="text" id="niveau" name="niveau" required />
+
+        <button type="submit">Ajouter étudiant</button>
+      </form>
+
+      <hr />
+      <h3>Liste des étudiants :</h3>
+      <ul id="liste-etudiants"></ul>
+    </section>
+
+    <section id="rapports" class="window">
+      <h2>Validation des rapports de stage</h2>
+      <form id="rapports-form">
+        <label for="nomRapport">Nom de l'étudiant :</label>
+        <input type="text" id="nomRapport" name="nomRapport" required />
+
+        <label for="titreRapport">Titre du rapport :</label>
+        <input type="text" id="titreRapport" name="titreRapport" required />
+
+        <label for="validation">Validation :</label>
+        <select id="validation" name="validation" required>
+          <option value="">--Choisir--</option>
+          <option value="Validé">Validé</option>
+          <option value="Refusé">Refusé</option>
+        </select>
+
+        <button type="submit">Ajouter validation</button>
+      </form>
+
+      <hr />
+      <h3>Rapports validés :</h3>
+      <ul id="liste-rapports"></ul>
+    </section>
+
+    <section id="commentaires" class="window">
+      <h2>Envoyer des commentaires</h2>
+      <form id="commentaires-form">
+        <label for="nomEtudiantCom">Nom de l'étudiant :</label>
+        <input type="text" id="nomEtudiantCom" name="nomEtudiantCom" required />
+
+        <label for="commentaire">Commentaire :</label>
+        <textarea id="commentaire" name="commentaire" rows="4" required></textarea>
+
+        <button type="submit">Envoyer commentaire</button>
+      </form>
+
+      <hr />
+      <h3>Commentaires envoyés :</h3>
+      <ul id="liste-commentaires"></ul>
+    </section>
+
+    <section id="planning" class="window">
+      <h2>Consulter le planning</h2>
+      <form id="planning-form">
+        <label for="datePlanning">Date :</label>
+        <input type="date" id="datePlanning" name="datePlanning" required />
+
+        <label for="activite">Activité :</label>
+        <input type="text" id="activite" name="activite" required />
+
+        <button type="submit">Ajouter activité</button>
+      </form>
+
+      <hr />
+      <h3>Planning :</h3>
+      <ul id="liste-planning"></ul>
+    </section>
+
+    <section id="feedbacks" class="window">
+      <h2>Historique des feedbacks</h2>
+      <form id="feedbacks-form">
+        <label for="nomEtudiantFeed">Nom de l'étudiant :</label>
+        <input type="text" id="nomEtudiantFeed" name="nomEtudiantFeed" required />
+
+        <label for="feedback">Feedback :</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+        <button type="submit">Ajouter feedback</button>
+      </form>
+
+      <hr />
+      <h3>Feedbacks :</h3>
+      <ul id="liste-feedbacks"></ul>
+    </section>
+  </main>
+
+  <script src="page_encadreur.js"></script>
+</body>
+</html>
+
+

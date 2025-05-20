@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de bord | GestiStage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header>
+    <div class="logo">GestiStage</div>
+    <nav class="top-nav">
+      <a href="#profil">Mon Profil</a>
+      <a href="#notifications">Notifications</a>
+      <a href="#support">Support</a>
+      <a href="logout.html" class="logout">Déconnexion</a>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#offres">📋 Offres de stage</a></li>
+        <li><a href="#candidatures">📥 Mes candidatures</a></li>
+        <li><a href="#rapport">📄 Soumettre un rapport</a></li>
+        <li><a href="#rapports-valider">✅ Rapports à valider</a></li>
+        <li><a href="#stagiaires">👥 Mes stagiaires</a></li>
+        <li><a href="#gestion-utilisateurs">🛠️ Gestion des comptes</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard">
+      <section id="welcome">
+        <h1>Bienvenue sur GestiStage</h1>
+        <p>Accédez à vos fonctionnalités selon votre rôle : Étudiant, Encadreur, Entreprise, ou Administrateur.</p>
+      </section>
+
+      <section id="offres" class="box">
+        <h2>📋 Offres de stage</h2>
+        <p>Consultez les offres disponibles et postulez directement.</p>
+        <button>Voir les Offres</button>
+      </section>
+
+      <section id="candidatures" class="box">
+        <h2>📥 Mes Candidatures</h2>
+        <p>Suivez le statut de vos candidatures (acceptée, en attente, refusée).</p>
+        <button>Voir mes candidatures</button>
+      </section>
+
+      <section id="rapport" class="box">
+        <h2>📄 Soumettre mon Rapport</h2>
+        <p>Téléversez votre rapport final ou consultez les modèles.</p>
+        <button>Soumettre un rapport</button>
+      </section>
+
+      <section id="rapports-valider" class="box">
+        <h2>✅ Rapports à Valider (Encadreur)</h2>
+        <p>Consultez et validez les rapports soumis par vos étudiants.</p>
+        <button>Valider des rapports</button>
+      </section>
+
+      <section id="stagiaires" class="box">
+        <h2>👥 Mes Stagiaires (Entreprise)</h2>
+        <p>Gérez les étudiants recrutés dans votre entreprise.</p>
+        <button>Gérer mes stagiaires</button>
+      </section>
+
+      <section id="gestion-utilisateurs" class="box">
+        <h2>🛠️ Gestion des utilisateurs (Admin)</h2>
+        <p>Visualisez et gérez tous les comptes de la plateforme.</p>
+        <button>Accéder à la gestion</button>
+      </section>
+
+      <section id="notifications" class="box">
+        <h2>🔔 Notifications</h2>
+        <ul>
+          <li>Nouvelle offre de stage disponible.</li>
+          <li>Votre rapport a été validé.</li>
+          <li>Candidature acceptée par X Entreprise.</li>
+        </ul>
+      </section>
+
+      <section id="support" class="box">
+        <h2>📞 Assistance & Support</h2>
+        <p>Pour tout problème, contactez-nous à <a href="mailto:contact@gestistage.cm">contact@gestistage.cm</a>.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GestiStage - Plateforme de gestion des stages étudiants au Cameroun</p>
+  </footer>
+</body>
+</html>

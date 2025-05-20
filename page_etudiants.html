@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tableau de bord Étudiant</title>
+  <link rel="stylesheet" href="page_etudiant.css" />
+</head>
+<body>
+  <header>
+    <h1>Bienvenue Étudiant</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#offres" class="nav-link">Consulter les offres de stage</a></li>
+      <li><a href="#candidatures" class="nav-link">Suivre mes candidatures</a></li>
+      <li><a href="#rapport" class="nav-link">Soumettre un rapport</a></li>
+      <li><a href="#encadrant" class="nav-link">Contacter mon encadrant</a></li>
+      <li><a href="#evaluation" class="nav-link">Voir mes évaluations</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Sections -->
+    <section id="offres" class="window">
+      <h2>Consulter les offres de stage</h2>
+      <form id="offres-form">
+        <label for="titreOffre">Titre de l'offre :</label>
+        <input type="text" id="titreOffre" name="titreOffre" required />
+
+        <label for="descriptionOffre">Description :</label>
+        <textarea id="descriptionOffre" name="descriptionOffre" rows="4" required></textarea>
+
+        <label for="dateOffre">Date de publication :</label>
+        <input type="date" id="dateOffre" name="dateOffre" required />
+
+        <button type="submit">Ajouter l'offre</button>
+      </form>
+
+      <hr />
+      <h3>Offres disponibles :</h3>
+      <ul id="liste-offres"></ul>
+    </section>
+
+    <section id="candidatures" class="window">
+      <h2>Suivre mes candidatures</h2>
+      <form id="candidatures-form">
+        <label for="poste">Poste :</label>
+        <input type="text" id="poste" name="poste" required />
+
+        <label for="entreprise">Entreprise :</label>
+        <input type="text" id="entreprise" name="entreprise" required />
+
+        <label for="dateCandidature">Date de candidature :</label>
+        <input type="date" id="dateCandidature" name="dateCandidature" required />
+
+        <label for="statut">Statut :</label>
+        <select id="statut" name="statut" required>
+          <option value="">--Choisir--</option>
+          <option value="En attente">En attente</option>
+          <option value="Acceptée">Acceptée</option>
+          <option value="Refusée">Refusée</option>
+        </select>
+
+        <button type="submit">Ajouter la candidature</button>
+      </form>
+
+      <hr />
+      <h3>Mes candidatures :</h3>
+      <ul id="liste-candidatures"></ul>
+    </section>
+
+    <section id="rapport" class="window">
+      <h2>Soumettre un rapport</h2>
+      <form id="rapport-form" enctype="multipart/form-data">
+        <label for="titre">Titre du rapport :</label>
+        <input type="text" id="titre" name="titre" required />
+
+        <label for="description">Description :</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="fichier">Ajouter un fichier PDF :</label>
+        <input type="file" id="fichier" name="fichier" accept="application/pdf" />
+
+        <label for="date">Date de soumission :</label>
+        <input type="date" id="date" name="date" required />
+
+        <button type="submit">Enregistrer</button>
+      </form>
+
+      <hr />
+      <h3>Rapports soumis :</h3>
+      <ul id="liste-rapports"></ul>
+    </section>
+
+    <section id="encadrant" class="window">
+      <h2>Contacter mon encadrant</h2>
+      <form id="encadrant-form">
+        <label for="objet">Objet :</label>
+        <input type="text" id="objet" name="objet" required />
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <label for="dateContact">Date :</label>
+        <input type="date" id="dateContact" name="dateContact" required />
+
+        <button type="submit">Envoyer</button>
+      </form>
+
+      <hr />
+      <h3>Messages envoyés :</h3>
+      <ul id="liste-messages"></ul>
+    </section>
+
+    <section id="evaluation" class="window">
+      <h2>Voir mes évaluations</h2>
+      <form id="evaluation-form">
+        <label for="matiere">Matière :</label>
+        <input type="text" id="matiere" name="matiere" required />
+
+        <label for="note">Note :</label>
+        <input type="number" id="note" name="note" min="0" max="20" step="0.1" required />
+
+        <label for="dateEvaluation">Date :</label>
+        <input type="date" id="dateEvaluation" name="dateEvaluation" required />
+
+        <button type="submit">Ajouter l'évaluation</button>
+      </form>
+
+      <hr />
+      <h3>Mes évaluations :</h3>
+      <ul id="liste-evaluations"></ul>
+    </section>
+  </main>
+
+  <script src="page_etudiant.js"></script>
+</body>
+</html>
+
+
+
+

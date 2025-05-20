@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Gestion de Stages</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo" width="50">
+    </div>
+    <div class="site-name">
+        <h1>Gestion de Stages</h1>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="page garde.html">Page d'accueil</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Section -->
+<main>
+    <div class="form-container">
+        <h2>Inscription - Étudiant / Encadrant / Entreprise</h2>
+
+        <!-- Connexion avec Google -->
+        <div class="google-signin">
+            <div id="g_id_onload"
+                data-client_id="TON_CLIENT_ID_GOOGLE"
+                data-context="signup"
+                data-ux_mode="popup"
+                data-login_uri="https://ton-site.com/google_signup_handler.php"
+                data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                data-type="standard"
+                data-shape="rectangular"
+                data-theme="outline"
+                data-text="signup_with"
+                data-size="large"
+                data-logo_alignment="left">
+            </div>
+        </div>
+
+        <!-- Formulaire classique -->
+        <form action="submit_registration.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="first-name">Prénom :</label>
+                <input type="text" id="first-name" name="first_name" required placeholder="Entrez votre prénom">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Nom :</label>
+                <input type="text" id="last-name" name="last_name" required placeholder="Entrez votre nom">
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required placeholder="Entrez votre email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone :</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Entrez votre numéro de téléphone">
+            </div>
+            <div class="form-group">
+                <label for="date-of-birth">Date de naissance :</label>
+                <input type="date" id="date-of-birth" name="date_of_birth" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Filière :</label>
+                <select id="department" name="department" required>
+                    <option value="informatique">Informatique</option>
+                    <option value="maths">Mathématiques</option>
+                    <option value="biologie">Biologie</option>
+                    <option value="gestion">Gestion</option>
+                    <option value="ingenierie">Ingénierie</option>
+                    <option value="commerce">Commerce</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="university">Université :</label>
+                <input type="text" id="university" name="university" required placeholder="Entrez votre université">
+            </div>
+            <div class="form-group">
+                <label for="year">Année d'étude :</label>
+                <input type="number" id="year" name="year" required placeholder="Entrez votre année d'étude">
+            </div>
+            <div class="form-group">
+                <label for="user-type">Je suis un(e) :</label>
+                <select id="user-type" name="user_type" required>
+                    <option value="etudiant">Étudiant</option>
+                    <option value="encadrant">Encadrant</option>
+                    <option value="entreprise">Entreprise</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cover-letter">Lettre de motivation :</label>
+                <textarea id="cover-letter" name="cover_letter" rows="5" placeholder="Rédigez une courte lettre de motivation (si étudiant)"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="resume">CV (PDF) :</label>
+                <input type="file" id="resume" name="resume" accept=".pdf" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">S'inscrire</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Gestion de Stages. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #004080;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #e6f0ff;
+  width: 200px;
+  float: left;
+  height: 100vh;
+}
+
+nav ul li {
+  border-bottom: 1px solid #ccc;
+}
+
+nav ul li a {
+  display: block;
+  padding: 12px 15px;
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #004080;
+  color: white;
+}
+
+main {
+  margin-left: 210px;
+  padding: 1em;
+}
+
+main section.window {
+  display: none; /* toutes cachées par défaut */
+  border: 1px solid #004080;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  background-color: #f9faff;
+}
+
+main section.window.active {
+  display: block; /* visible quand active */
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form select,
+form textarea,
+form input[type="file"] {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  margin-top: 12px;
+  background-color: #004080;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+form button:hover {
+  background-color: #003060;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  background-color: #e6f0ff;
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+
+
+

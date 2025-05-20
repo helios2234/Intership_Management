@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0066cc;
+    color: white;
+}
+
+header .logo img {
+    max-width: 50px;
+}
+
+header .site-name h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+header .navbar ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header .navbar ul li {
+    margin-left: 20px;
+}
+
+header .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header .navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+main .buttons {
+    margin-bottom: 30px;
+}
+
+main .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+main .btn:hover {
+    background-color: #004a99;
+}
+
+section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
