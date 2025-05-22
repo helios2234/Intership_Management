@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Connexion - Gestion de Stages</title>
-  <link rel="stylesheet" href="page_connexion.css" />
+  <link rel="stylesheet" href="page_inscription.css"/>
 </head>
 <body>
-  <div class="login-container animate">
+  <div class="background-blur"></div>
+
+  <div class="login-container">
     <h2>Connexion</h2>
-    <form action="traitement_connexion.php" method="POST">
+    <form id="loginForm" action="traitement_connexion.php" method="POST">
       <label for="user_type">Je suis :</label>
       <select id="user_type" name="user_type" required>
         <option value="">-- Sélectionnez --</option>
@@ -33,6 +35,6 @@
     </div>
   </div>
 
-  <script src="page_connexion.js"></script>
+  <script src="page_inscription.js"></script>
 </body>
 </html>
