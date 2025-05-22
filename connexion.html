@@ -4,79 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Connexion - Gestion de Stages</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .login-container {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      width: 400px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .bottom-links {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .bottom-links a {
-      color: #007bff;
-      text-decoration: none;
-    }
-
-    .bottom-links a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="page_connexion.css" />
 </head>
 <body>
-  <div class="login-container">
+  <div class="login-container animate">
     <h2>Connexion</h2>
     <form action="traitement_connexion.php" method="POST">
       <label for="user_type">Je suis :</label>
@@ -101,5 +32,7 @@
       <p>Pas encore inscrit ? <a href="inscription.html">Créer un compte</a></p>
     </div>
   </div>
+
+  <script src="page_connexion.js"></script>
 </body>
 </html>
