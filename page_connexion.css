@@ -1,48 +1,67 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin: 0;
-  animation: fadeIn 1s ease-in-out;
+  position: relative;
+}
+
+.background-blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
 
 .login-container {
-  background: white;
-  padding: 40px 30px;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   width: 400px;
-  transform: translateY(-30px);
-  opacity: 0;
-  animation: slideUp 0.6s forwards ease-out;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #333;
 }
 
 label {
   display: block;
   margin-top: 15px;
-  font-weight: 600;
+  font-weight: bold;
+  color: #444;
 }
 
 input, select {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin-top: 5px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 15px;
 }
 
 input:focus, select:focus {
-  border-color: #2575fc;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
   outline: none;
 }
 
@@ -50,18 +69,17 @@ button {
   width: 100%;
   padding: 12px;
   margin-top: 20px;
-  background-color: #2575fc;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #1a5ee7;
-  transform: scale(1.02);
+  background-color: #0056b3;
 }
 
 .bottom-links {
@@ -70,32 +88,12 @@ button:hover {
 }
 
 .bottom-links a {
-  color: #2575fc;
+  color: #007bff;
   text-decoration: none;
-  transition: text-decoration 0.3s;
+  transition: color 0.3s ease;
 }
 
 .bottom-links a:hover {
   text-decoration: underline;
-}
-
-/* Animations */
-@keyframes slideUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  color: #0056b3;
 }
