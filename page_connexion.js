@@ -18,3 +18,4 @@ document.addEventListener("DOMContentLoaded", () => {
     button.style.opacity = "0.6";
   });
 });
+
