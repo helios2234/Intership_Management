@@ -1,106 +1,125 @@
+/* fichier : page_etudiant.css */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  background: #f4f4f9;
+  color: #333;
 }
 
 header {
-  background-color: #004080;
+  background: #2b9348;
   color: white;
-  padding: 1em;
+  padding: 1rem;
   text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+nav {
+  min-width: 260px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  background-color: #e6f0ff;
-  width: 200px;
-  float: left;
-  height: 100vh;
 }
 
-nav ul li {
-  border-bottom: 1px solid #ccc;
+nav li {
+  margin: 1rem 0;
 }
 
-nav ul li a {
-  display: block;
-  padding: 12px 15px;
-  color: #004080;
+.nav-link {
   text-decoration: none;
+  color: #2b9348;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease-in-out, color 0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-  background-color: #004080;
-  color: white;
+.nav-link:hover {
+  color: #007f5f;
+  transform: translateX(5px);
 }
 
 main {
-  margin-left: 210px;
-  padding: 1em;
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
 }
 
-main section.window {
-  display: none; /* toutes cachées par défaut */
-  border: 1px solid #004080;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-radius: 4px;
-  background-color: #f9faff;
-}
-
-main section.window.active {
-  display: block; /* visible quand active */
+.window {
+  display: none;
+  transition: all 0.5s ease;
 }
 
 form label {
   display: block;
-  margin-top: 10px;
-  font-weight: bold;
+  margin-top: 1rem;
 }
 
-form input[type="text"],
-form input[type="date"],
-form input[type="number"],
-form select,
+form input,
 form textarea,
-form input[type="file"] {
+form button {
   width: 100%;
-  padding: 6px;
-  margin-top: 4px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
 form button {
-  margin-top: 12px;
-  background-color: #004080;
+  background: #2b9348;
   color: white;
-  padding: 10px 15px;
   border: none;
   cursor: pointer;
-  border-radius: 3px;
+  margin-top: 1rem;
+  transition: background 0.3s;
 }
 
 form button:hover {
-  background-color: #003060;
+  background: #007f5f;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
+.offre, .resultat, #suivi ul li {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-left: 4px solid #2b9348;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
-ul li {
-  background-color: #e6f0ff;
-  margin-bottom: 6px;
-  padding: 6px 10px;
-  border-radius: 3px;
+.resultat .note {
+  font-size: 1.1rem;
+  color: #007f5f;
+  text-align: right;
+  font-weight: bold;
 }
 
+.statut {
+  font-weight: bold;
+  padding-left: 10px;
+}
 
+.statut::before {
+  content: '•';
+  color: orange;
+  margin-right: 0.5rem;
+}
 
+.statut.Acceptée::before {
+  color: green;
+}
 
+.statut.Refusée::before {
+  color: red;
+}
