@@ -1,52 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de Stages</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestion de Stages</title>
+  <link rel="stylesheet" href="page_garde.css" />
 </head>
 <body>
 
+<!-- Flou en arrière-plan -->
+<div class="background-blur"></div>
+
 <!-- Header -->
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="Logo" width="50">
-    </div>
-    <div class="site-name">
-        <h1>Gestion de Stages</h1>
-    </div>
-    <nav class="navbar">
-        <ul>
-            <li><a href="#about">À propos de nous</a></li>
-            <li><a href="#contact">Nous contacter</a></li>
-        </ul>
-    </nav>
+<header class="header">
+  <div class="logo">
+    <!-- Remplace par un chemin relatif à ton projet -->
+    <img src="images/logo.png" alt="Logo" />
+  </div>
+  <div class="site-name">
+    <h1>Gestion de Stages</h1>
+  </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#citation">Citation</a></li>
+      <li><a href="#contact">Nous contacter</a></li>
+      <li><a href="#about">À propos de nous</a></li>
+    </ul>
+  </nav>
 </header>
 
-<!-- Main Section -->
-<main>
-    <div class="buttons">
-        <a href="connexion.html" class="btn">Connexion</a>
-        <a href="inscription.html" class="btn">Inscription</a>
-    </div>
+<!-- Main Content -->
+<main class="fade-in container">
 
-    <section id="about">
-        <h2>À propos de nous</h2>
-        <p>Nous sommes une plateforme de gestion des stages, permettant aux étudiants de trouver des stages dans des entreprises et de déposer leurs rapports. Nous facilitons la mise en relation entre étudiants et entreprises, avec un suivi simple et efficace.</p>
-    </section>
+  <!-- Citation et texte long -->
+  <section id="citation" class="center-content">
+    <blockquote class="big-quote">
+      <strong>« L'éducation est la clé qui ouvre les portes de l'avenir, et le stage en est le tremplin essentiel. »</strong>
+    </blockquote>
+    <article class="long-text">
+      <p>
+        Au Cameroun, l’éducation représente un pilier fondamental du développement social, économique et culturel. Chaque année, des milliers d’étudiants poursuivent leurs études dans diverses disciplines, cherchant à acquérir des compétences solides et adaptées au marché du travail moderne. Toutefois, la réussite académique ne suffit plus à elle seule pour garantir une insertion professionnelle efficace. C’est ici que le stage joue un rôle primordial.
+      </p>
+      <p>
+        Le stage, intégré au cursus universitaire, offre aux étudiants une immersion dans le monde réel de l’entreprise. Il permet de mettre en pratique les connaissances théoriques acquises en classe, de développer des compétences pratiques et de comprendre les exigences professionnelles. Pourtant, malgré son importance, la gestion et le suivi des stages restent souvent un défi au Cameroun, tant pour les étudiants, les établissements d’enseignement que pour les entreprises.
+      </p>
+      <p>
+        Beaucoup d’étudiants rencontrent des difficultés pour trouver des offres de stage pertinentes, adaptées à leur domaine d’études, et bénéficier d’un encadrement adéquat. Les entreprises, quant à elles, peinent parfois à communiquer efficacement leurs besoins et à assurer un suivi rigoureux des stagiaires. Les établissements éducatifs doivent coordonner ce triptyque pour garantir que chaque stage contribue réellement à la formation professionnelle.
+      </p>
+      <p>
+        C’est dans ce contexte que notre projet « Gestion de Stages » s’inscrit comme une solution innovante et pragmatique. Notre plateforme vise à centraliser les offres de stages, faciliter les candidatures, assurer un suivi structuré des rapports et permettre une communication fluide entre toutes les parties prenantes. Nous souhaitons ainsi moderniser l’expérience du stage au Cameroun, la rendre plus accessible, transparente et efficace.
+      </p>
+      <p>
+        En favorisant cette synergie, nous contribuons à la formation de jeunes professionnels mieux préparés, plus confiants, et capables de répondre aux attentes du marché du travail local et international. Le stage devient alors non seulement une étape obligatoire, mais un véritable levier d’insertion et de réussite professionnelle.
+      </p>
+      <p>
+        Cette initiative est le fruit d’un engagement collectif et d’une volonté forte d’apporter un impact social durable, en s’appuyant sur les technologies numériques pour transformer positivement l’éducation et l’employabilité au Cameroun.
+      </p>
+    </article>
+  </section>
 
-    <section id="contact">
-        <h2>Nous contacter</h2>
-        <p>Numéro : 123-456-7890</p>
-        <p>Email : contact@gestionsdestages.com</p>
-    </section>
+  <!-- Boutons Connexion / Inscription -->
+  <div class="action-buttons">
+    <a href="page_connexion.html" class="btn btn-primary">Connexion</a>
+    <a href="page_inscription.html" class="btn btn-secondary">Inscription</a>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact" class="section-contact">
+    <h2>Nous contacter</h2>
+    <p><strong>Numéro :</strong> +237 123 456 789</p>
+    <p><strong>Email :</strong> contact@gestiondestages.cm</p>
+  </section>
+
+  <!-- À propos de nous en bas -->
+  <section id="about" class="section-about">
+    <h2 class="section-title">À propos de nous</h2>
+    <p>
+      Nous sommes un groupe d'étudiants issus de plusieurs institutions universitaires camerounaises, animés par une passion commune pour les technologies numériques et le développement de solutions concrètes adaptées à notre environnement.
+    </p>
+    <p>
+      Ce projet est né d’un besoin que nous avons tous rencontré au cours de nos études : trouver un stage pertinent, en lien avec notre parcours, et surtout pouvoir assurer un suivi structuré jusqu’à la validation finale.
+    </p>
+    <p>Grâce à "Gestion de Stages", nous mettons à disposition une plateforme centralisée qui permet :</p>
+    <ul>
+      <li>De consulter les offres de stages publiées par des entreprises partenaires</li>
+      <li>De soumettre facilement ses candidatures</li>
+      <li>De faire valider et suivre ses rapports de stage par les encadreurs</li>
+      <li>D’interagir directement avec les entreprises et les tuteurs</li>
+      <li>D’obtenir un historique de son parcours de stage</li>
+    </ul>
+    <p>
+      Notre ambition est de moderniser l’expérience de stage au Cameroun et d’en faire un véritable levier de professionnalisation pour les étudiants. C’est un projet académique mais avec un réel impact social et éducatif.
+    </p>
+  </section>
+
 </main>
 
 <!-- Footer -->
-<footer>
-    <p>&copy; 2025 Gestion de Stages. Tous droits réservés.</p>
+<footer class="footer">
+  <p>&copy; 2025 Gestion de Stages. Tous droits réservés.</p>
 </footer>
 
+<script src="page_garde.js"></script>
 </body>
 </html>
