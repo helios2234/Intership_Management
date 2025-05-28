@@ -1,17 +1,16 @@
-// Animation d'apparition au scroll
-function reveal() {
-    const reveals = document.querySelectorAll('.reveal');
+document.addEventListener("DOMContentLoaded", () => {
 
-    reveals.forEach(section => {
-        const windowHeight = window.innerHeight;
-        const elementTop = section.getBoundingClientRect().top;
-        const visiblePoint = 100;
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    aboutSection.focus();
+  }
 
-        if (elementTop < windowHeight - visiblePoint) {
-            section.classList.add('visible');
-        }
-    });
-}
-
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
+});
+// Quand la page est complètement chargée
+window.addEventListener('load', () => {
+  const citationSection = document.getElementById('citation');
+  if (citationSection) {
+    // Scroll smooth vers la section citation
+    citationSection.scrollIntoView({ behavior: 'smooth' });
+  }
+});
