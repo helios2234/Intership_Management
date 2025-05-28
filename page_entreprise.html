@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Tableau de bord Entreprise</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="page_entreprise.css" />
 </head>
 <body>
@@ -10,131 +11,126 @@
     <h1>Bienvenue Entreprise</h1>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#publier" class="nav-link">Publier une offre</a></li>
-      <li><a href="#candidatures" class="nav-link">Gérer les candidatures</a></li>
-      <li><a href="#stagiaires" class="nav-link">Suivi des stagiaires</a></li>
-      <li><a href="#evaluations" class="nav-link">Évaluer les étudiants</a></li>
-      <li><a href="#profil" class="nav-link">Gérer mon profil</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#publier" class="nav-link">📢 Publier une offre</a></li>
+        <li><a href="#candidatures" class="nav-link">📥 Gérer les candidatures</a></li>
+        <li><a href="#stagiaires" class="nav-link">👨‍🎓 Suivi des stagiaires</a></li>
+        <li><a href="#evaluations" class="nav-link">📊 Évaluer les étudiants</a></li>
+        <li><a href="#profil" class="nav-link">🛠️ Gérer mon profil</a></li>
+      </ul>
+    </nav>
 
-  <main>
-    <section id="publier" class="window">
-      <h2>Publier une offre</h2>
-      <form id="publier-form">
-        <label for="titreOffre">Titre de l'offre :</label>
-        <input type="text" id="titreOffre" name="titreOffre" required />
+    <main>
+      <section id="publier" class="window">
+        <h2>📢 Publier une offre</h2>
+        <form id="publier-form">
+          <label for="titreOffre">Titre de l'offre :</label>
+          <input type="text" id="titreOffre" name="titreOffre" required />
 
-        <label for="descriptionOffre">Description :</label>
-        <textarea id="descriptionOffre" name="descriptionOffre" rows="4" required></textarea>
+          <label for="descriptionOffre">Description :</label>
+          <textarea id="descriptionOffre" name="descriptionOffre" required></textarea>
 
-        <label for="datePublication">Date de publication :</label>
-        <input type="date" id="datePublication" name="datePublication" required />
+          <label for="datePublication">Date de publication :</label>
+          <input type="date" id="datePublication" name="datePublication" required />
 
-        <button type="submit">Publier</button>
-      </form>
+          <button type="submit">Publier</button>
+        </form>
 
-      <hr />
-      <h3>Offres publiées :</h3>
-      <ul id="liste-offres"></ul>
-    </section>
+        <h3>Offres publiées :</h3>
+        <ul id="liste-offres"></ul>
+      </section>
 
-    <section id="candidatures" class="window">
-      <h2>Gérer les candidatures</h2>
-      <form id="candidatures-form">
-        <label for="nomEtudiant">Nom étudiant :</label>
-        <input type="text" id="nomEtudiant" name="nomEtudiant" required />
+      <section id="candidatures" class="window">
+        <h2>📥 Gérer les candidatures</h2>
+        <form id="candidatures-form">
+          <label for="nomEtudiant">Nom étudiant :</label>
+          <input type="text" id="nomEtudiant" name="nomEtudiant" required />
 
-        <label for="poste">Poste :</label>
-        <input type="text" id="poste" name="poste" required />
+          <label for="poste">Poste :</label>
+          <input type="text" id="poste" name="poste" required />
 
-        <label for="dateCandidature">Date de candidature :</label>
-        <input type="date" id="dateCandidature" name="dateCandidature" required />
+          <label for="dateCandidature">Date de candidature :</label>
+          <input type="date" id="dateCandidature" name="dateCandidature" required />
 
-        <label for="statut">Statut :</label>
-        <select id="statut" name="statut" required>
-          <option value="">--Choisir--</option>
-          <option value="En attente">En attente</option>
-          <option value="Acceptée">Acceptée</option>
-          <option value="Refusée">Refusée</option>
-        </select>
+          <label for="statut">Statut :</label>
+          <select id="statut" name="statut" required>
+            <option value="">--Choisir--</option>
+            <option value="En attente">En attente</option>
+            <option value="Acceptée">Acceptée</option>
+            <option value="Refusée">Refusée</option>
+          </select>
 
-        <button type="submit">Ajouter candidature</button>
-      </form>
+          <button type="submit">Ajouter candidature</button>
+        </form>
 
-      <hr />
-      <h3>Candidatures reçues :</h3>
-      <ul id="liste-candidatures"></ul>
-    </section>
+        <h3>Candidatures reçues :</h3>
+        <ul id="liste-candidatures"></ul>
+      </section>
 
-    <section id="stagiaires" class="window">
-      <h2>Suivi des stagiaires</h2>
-      <form id="stagiaires-form">
-        <label for="nomStagiaire">Nom du stagiaire :</label>
-        <input type="text" id="nomStagiaire" name="nomStagiaire" required />
+      <section id="stagiaires" class="window">
+        <h2>👨‍🎓 Suivi des stagiaires</h2>
+        <form id="stagiaires-form">
+          <label for="nomStagiaire">Nom du stagiaire :</label>
+          <input type="text" id="nomStagiaire" name="nomStagiaire" required />
 
-        <label for="periode">Période :</label>
-        <input type="text" id="periode" name="periode" placeholder="Ex : Juin - Août 2025" required />
+          <label for="periode">Période :</label>
+          <input type="text" id="periode" name="periode" required />
 
-        <label for="commentaires">Commentaires :</label>
-        <textarea id="commentaires" name="commentaires" rows="4"></textarea>
+          <label for="commentaires">Commentaires :</label>
+          <textarea id="commentaires" name="commentaires"></textarea>
 
-        <button type="submit">Ajouter stagiaire</button>
-      </form>
+          <button type="submit">Ajouter stagiaire</button>
+        </form>
 
-      <hr />
-      <h3>Liste des stagiaires :</h3>
-      <ul id="liste-stagiaires"></ul>
-    </section>
+        <h3>Liste des stagiaires :</h3>
+        <ul id="liste-stagiaires"></ul>
+      </section>
 
-    <section id="evaluations" class="window">
-      <h2>Évaluer les étudiants</h2>
-      <form id="evaluations-form">
-        <label for="nomEtudiantEval">Nom de l'étudiant :</label>
-        <input type="text" id="nomEtudiantEval" name="nomEtudiantEval" required />
+      <section id="evaluations" class="window">
+        <h2>📊 Évaluer les étudiants</h2>
+        <form id="evaluations-form">
+          <label for="nomEtudiantEval">Nom de l'étudiant :</label>
+          <input type="text" id="nomEtudiantEval" name="nomEtudiantEval" required />
 
-        <label for="matiereEval">Matière :</label>
-        <input type="text" id="matiereEval" name="matiereEval" required />
+          <label for="matiereEval">Matière :</label>
+          <input type="text" id="matiereEval" name="matiereEval" required />
 
-        <label for="noteEval">Note :</label>
-        <input type="number" id="noteEval" name="noteEval" min="0" max="20" step="0.1" required />
+          <label for="noteEval">Note :</label>
+          <input type="number" id="noteEval" name="noteEval" min="0" max="20" step="0.1" required />
 
-        <label for="dateEval">Date :</label>
-        <input type="date" id="dateEval" name="dateEval" required />
+          <label for="dateEval">Date :</label>
+          <input type="date" id="dateEval" name="dateEval" required />
 
-        <button type="submit">Ajouter évaluation</button>
-      </form>
+          <button type="submit">Ajouter évaluation</button>
+        </form>
 
-      <hr />
-      <h3>Évaluations :</h3>
-      <ul id="liste-evaluations"></ul>
-    </section>
+        <h3>Évaluations :</h3>
+        <ul id="liste-evaluations"></ul>
+      </section>
 
-    <section id="profil" class="window">
-      <h2>Gérer mon profil</h2>
-      <form id="profil-form">
-        <label for="nomEntreprise">Nom de l'entreprise :</label>
-        <input type="text" id="nomEntreprise" name="nomEntreprise" required />
+      <section id="profil" class="window">
+        <h2>🛠️ Gérer mon profil</h2>
+        <form id="profil-form">
+          <label for="nomEntreprise">Nom de l'entreprise :</label>
+          <input type="text" id="nomEntreprise" name="nomEntreprise" required />
 
-        <label for="adresse">Adresse :</label>
-        <input type="text" id="adresse" name="adresse" required />
+          <label for="adresse">Adresse :</label>
+          <input type="text" id="adresse" name="adresse" required />
 
-        <label for="contact">Contact :</label>
-        <input type="text" id="contact" name="contact" required />
+          <label for="contact">Contact :</label>
+          <input type="text" id="contact" name="contact" required />
 
-        <button type="submit">Mettre à jour</button>
-      </form>
+          <button type="submit">Mettre à jour</button>
+        </form>
 
-      <hr />
-      <h3>Profil actuel :</h3>
-      <ul id="liste-profil"></ul>
-    </section>
-  </main>
+        <h3>Profil actuel :</h3>
+        <ul id="liste-profil"></ul>
+      </section>
+    </main>
+  </div>
 
   <script src="page_entreprise.js"></script>
 </body>
 </html>
-
-
