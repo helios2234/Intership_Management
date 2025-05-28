@@ -1,54 +1,75 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("main section.window");
-  const navLinks = document.querySelectorAll("nav a.nav-link");
-
-  function afficherSection(id) {
-    sections.forEach(section => {
-      section.classList.toggle("active", section.id === id);
-    });
-    navLinks.forEach(link => {
-      link.classList.toggle("active", link.getAttribute("href").substring(1) === id);
-    });
-  }
-
-  afficherSection("publier");
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      afficherSection(link.getAttribute("href").substring(1));
-    });
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
   });
+});
 
-  function ajouterItem(form, listeId, formatFn) {
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const liste = document.getElementById(listeId);
-      const data = new FormData(form);
-      const li = document.createElement("li");
-      li.innerHTML = formatFn(data);
-      liste.appendChild(li);
-      form.reset();
-    });
-  }
+// Offres
+document.getElementById('publier-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const titre = document.getElementById('titreOffre').value;
+  const desc = document.getElementById('descriptionOffre').value;
+  const date = document.getElementById('datePublication').value;
 
-  ajouterItem(document.getElementById("publier-form"), "liste-offres", data =>
-    `<strong>${data.get("titreOffre")}</strong> - ${data.get("descriptionOffre")} (Publié le ${data.get("datePublication")})`
-  );
+  const li = document.createElement('li');
+  li.textContent = `${titre} - ${desc} (${date})`;
+  document.getElementById('liste-offres').appendChild(li);
+  this.reset();
+});
 
-  ajouterItem(document.getElementById("candidatures-form"), "liste-candidatures", data =>
-    `<strong>${data.get("nomEtudiant")}</strong> - ${data.get("poste")} (Candidature du ${data.get("dateCandidature")}) - Statut : ${data.get("statut")}`
-  );
+// Candidature
+document.getElementById('candidatures-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nom = document.getElementById('nomEtudiant').value;
+  const poste = document.getElementById('poste').value;
+  const date = document.getElementById('dateCandidature').value;
+  const statut = document.getElementById('statut').value;
 
-  ajouterItem(document.getElementById("stagiaires-form"), "liste-stagiaires", data =>
-    `<strong>${data.get("nomStagiaire")}</strong> - Période : ${data.get("periode")}<br>${data.get("commentaires") ? `Commentaires: ${data.get("commentaires")}` : ""}`
-  );
+  const li = document.createElement('li');
+  li.textContent = `${nom} - ${poste} - ${statut} (${date})`;
+  document.getElementById('liste-candidatures').appendChild(li);
+  this.reset();
+});
 
-  ajouterItem(document.getElementById("evaluations-form"), "liste-evaluations", data =>
-    `<strong>${data.get("nomEtudiantEval")}</strong> - ${data.get("matiereEval")}: ${data.get("noteEval")} / 20 (le ${data.get("dateEval")})`
-  );
+// Stagiaire
+document.getElementById('stagiaires-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nom = document.getElementById('nomStagiaire').value;
+  const periode = document.getElementById('periode').value;
+  const comm = document.getElementById('commentaires').value;
 
-  ajouterItem(document.getElementById("profil-form"), "liste-profil", data =>
-    `<strong>${data.get("nomEntreprise")}</strong><br>Adresse : ${data.get("adresse")}<br>Contact : ${data.get("contact")}`
-  );
+  const li = document.createElement('li');
+  li.textContent = `${nom} - ${periode} | ${comm}`;
+  document.getElementById('liste-stagiaires').appendChild(li);
+  this.reset();
+});
+
+// Évaluations
+document.getElementById('evaluations-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nom = document.getElementById('nomEtudiantEval').value;
+  const matiere = document.getElementById('matiereEval').value;
+  const note = document.getElementById('noteEval').value;
+  const date = document.getElementById('dateEval').value;
+
+  const li = document.createElement('li');
+  li.textContent = `${nom} - ${matiere} : ${note}/20 (${date})`;
+  document.getElementById('liste-evaluations').appendChild(li);
+  this.reset();
+});
+
+// Profil
+document.getElementById('profil-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nom = document.getElementById('nomEntreprise').value;
+  const adresse = document.getElementById('adresse').value;
+  const contact = document.getElementById('contact').value;
+
+  const li = document.createElement('li');
+  li.textContent = `Nom: ${nom} | Adresse: ${adresse} | Contact: ${contact}`;
+  document.getElementById('liste-profil').innerHTML = ''; // remplacer
+  document.getElementById('liste-profil').appendChild(li);
+  this.reset();
 });
