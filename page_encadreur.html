@@ -2,124 +2,140 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tableau de bord Superviseur</title>
-  <link rel="stylesheet" href="page_encadreur.css" />
+  <title>Tableau de bord Entreprise</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="page_entreprise.css" />
 </head>
 <body>
   <header>
-    <h1>Tableau de bord Superviseur</h1>
+    <h1>Bienvenue Entreprise</h1>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#etudiants" class="nav-link">Gestion des étudiants</a></li>
-      <li><a href="#rapports" class="nav-link">Validation des rapports</a></li>
-      <li><a href="#commentaires" class="nav-link">Envoyer commentaires</a></li>
-      <li><a href="#planning" class="nav-link">Consulter planning</a></li>
-      <li><a href="#feedbacks" class="nav-link">Historique feedbacks</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#publier" class="nav-link">📢 Publier une offre</a></li>
+        <li><a href="#candidatures" class="nav-link">📋 Gérer les candidatures</a></li>
+        <li><a href="#stagiaires" class="nav-link">👥 Suivi des stagiaires</a></li>
+        <li><a href="#evaluations" class="nav-link">📝 Évaluer les étudiants</a></li>
+        <li><a href="#profil" class="nav-link">⚙️ Gérer mon profil</a></li>
+      </ul>
+    </nav>
 
-  <main>
-    <section id="etudiants" class="window">
-      <h2>Gestion des étudiants</h2>
-      <form id="etudiants-form">
-        <label for="nomEtudiant">Nom complet :</label>
-        <input type="text" id="nomEtudiant" name="nomEtudiant" required />
+    <main>
+      <section id="publier" class="window animate__animated animate__fadeIn">
+        <h2>📢 Publier une offre</h2>
+        <form id="publier-form">
+          <label for="titreOffre">Titre de l'offre :</label>
+          <input type="text" id="titreOffre" name="titreOffre" required />
 
-        <label for="filiere">Filière :</label>
-        <input type="text" id="filiere" name="filiere" required />
+          <label for="descriptionOffre">Description :</label>
+          <textarea id="descriptionOffre" name="descriptionOffre" rows="4" required></textarea>
 
-        <label for="niveau">Niveau :</label>
-        <input type="text" id="niveau" name="niveau" required />
+          <label for="datePublication">Date de publication :</label>
+          <input type="date" id="datePublication" name="datePublication" required />
 
-        <button type="submit">Ajouter étudiant</button>
-      </form>
+          <button type="submit">Publier</button>
+        </form>
 
-      <hr />
-      <h3>Liste des étudiants :</h3>
-      <ul id="liste-etudiants"></ul>
-    </section>
+        <hr />
+        <h3>Offres publiées :</h3>
+        <ul id="liste-offres"></ul>
+      </section>
 
-    <section id="rapports" class="window">
-      <h2>Validation des rapports de stage</h2>
-      <form id="rapports-form">
-        <label for="nomRapport">Nom de l'étudiant :</label>
-        <input type="text" id="nomRapport" name="nomRapport" required />
+      <section id="candidatures" class="window animate__animated animate__fadeIn">
+        <h2>📋 Gérer les candidatures</h2>
+        <form id="candidatures-form">
+          <label for="nomEtudiant">Nom étudiant :</label>
+          <input type="text" id="nomEtudiant" name="nomEtudiant" required />
 
-        <label for="titreRapport">Titre du rapport :</label>
-        <input type="text" id="titreRapport" name="titreRapport" required />
+          <label for="poste">Poste :</label>
+          <input type="text" id="poste" name="poste" required />
 
-        <label for="validation">Validation :</label>
-        <select id="validation" name="validation" required>
-          <option value="">--Choisir--</option>
-          <option value="Validé">Validé</option>
-          <option value="Refusé">Refusé</option>
-        </select>
+          <label for="dateCandidature">Date de candidature :</label>
+          <input type="date" id="dateCandidature" name="dateCandidature" required />
 
-        <button type="submit">Ajouter validation</button>
-      </form>
+          <label for="statut">Statut :</label>
+          <select id="statut" name="statut" required>
+            <option value="">--Choisir--</option>
+            <option value="En attente">En attente</option>
+            <option value="Acceptée">Acceptée</option>
+            <option value="Refusée">Refusée</option>
+          </select>
 
-      <hr />
-      <h3>Rapports validés :</h3>
-      <ul id="liste-rapports"></ul>
-    </section>
+          <button type="submit">Ajouter candidature</button>
+        </form>
 
-    <section id="commentaires" class="window">
-      <h2>Envoyer des commentaires</h2>
-      <form id="commentaires-form">
-        <label for="nomEtudiantCom">Nom de l'étudiant :</label>
-        <input type="text" id="nomEtudiantCom" name="nomEtudiantCom" required />
+        <hr />
+        <h3>Candidatures reçues :</h3>
+        <ul id="liste-candidatures"></ul>
+      </section>
 
-        <label for="commentaire">Commentaire :</label>
-        <textarea id="commentaire" name="commentaire" rows="4" required></textarea>
+      <section id="stagiaires" class="window animate__animated animate__fadeIn">
+        <h2>👥 Suivi des stagiaires</h2>
+        <form id="stagiaires-form">
+          <label for="nomStagiaire">Nom du stagiaire :</label>
+          <input type="text" id="nomStagiaire" name="nomStagiaire" required />
 
-        <button type="submit">Envoyer commentaire</button>
-      </form>
+          <label for="periode">Période :</label>
+          <input type="text" id="periode" name="periode" placeholder="Ex : Juin - Août 2025" required />
 
-      <hr />
-      <h3>Commentaires envoyés :</h3>
-      <ul id="liste-commentaires"></ul>
-    </section>
+          <label for="commentaires">Commentaires :</label>
+          <textarea id="commentaires" name="commentaires" rows="4"></textarea>
 
-    <section id="planning" class="window">
-      <h2>Consulter le planning</h2>
-      <form id="planning-form">
-        <label for="datePlanning">Date :</label>
-        <input type="date" id="datePlanning" name="datePlanning" required />
+          <button type="submit">Ajouter stagiaire</button>
+        </form>
 
-        <label for="activite">Activité :</label>
-        <input type="text" id="activite" name="activite" required />
+        <hr />
+        <h3>Liste des stagiaires :</h3>
+        <ul id="liste-stagiaires"></ul>
+      </section>
 
-        <button type="submit">Ajouter activité</button>
-      </form>
+      <section id="evaluations" class="window animate__animated animate__fadeIn">
+        <h2>📝 Évaluer les étudiants</h2>
+        <form id="evaluations-form">
+          <label for="nomEtudiantEval">Nom de l'étudiant :</label>
+          <input type="text" id="nomEtudiantEval" name="nomEtudiantEval" required />
 
-      <hr />
-      <h3>Planning :</h3>
-      <ul id="liste-planning"></ul>
-    </section>
+          <label for="matiereEval">Matière :</label>
+          <input type="text" id="matiereEval" name="matiereEval" required />
 
-    <section id="feedbacks" class="window">
-      <h2>Historique des feedbacks</h2>
-      <form id="feedbacks-form">
-        <label for="nomEtudiantFeed">Nom de l'étudiant :</label>
-        <input type="text" id="nomEtudiantFeed" name="nomEtudiantFeed" required />
+          <label for="noteEval">Note :</label>
+          <input type="number" id="noteEval" name="noteEval" min="0" max="20" step="0.1" required />
 
-        <label for="feedback">Feedback :</label>
-        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+          <label for="dateEval">Date :</label>
+          <input type="date" id="dateEval" name="dateEval" required />
 
-        <button type="submit">Ajouter feedback</button>
-      </form>
+          <button type="submit">Ajouter évaluation</button>
+        </form>
 
-      <hr />
-      <h3>Feedbacks :</h3>
-      <ul id="liste-feedbacks"></ul>
-    </section>
-  </main>
+        <hr />
+        <h3>Évaluations :</h3>
+        <ul id="liste-evaluations"></ul>
+      </section>
 
-  <script src="page_encadreur.js"></script>
+      <section id="profil" class="window animate__animated animate__fadeIn">
+        <h2>⚙️ Gérer mon profil</h2>
+        <form id="profil-form">
+          <label for="nomEntreprise">Nom de l'entreprise :</label>
+          <input type="text" id="nomEntreprise" name="nomEntreprise" required />
+
+          <label for="adresse">Adresse :</label>
+          <input type="text" id="adresse" name="adresse" required />
+
+          <label for="contact">Contact :</label>
+          <input type="text" id="contact" name="contact" required />
+
+          <button type="submit">Mettre à jour</button>
+        </form>
+
+        <hr />
+        <h3>Profil actuel :</h3>
+        <ul id="liste-profil"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="page_entreprise.js"></script>
 </body>
 </html>
-
-
