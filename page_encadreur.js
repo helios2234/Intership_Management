@@ -1,4 +1,3 @@
-// page_entreprise.js
 
 document.addEventListener('DOMContentLoaded', () => {
 
