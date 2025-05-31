@@ -1,21 +1,72 @@
-CREATE DATABASE IF NOT EXISTS gestion_stages;
-USE gestion_stages;
+<?php
+session_start();
+if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'encadreur') {
+    header("Location: page_connexion.html");
+    exit();
+}
+?>
 
-CREATE TABLE utilisateurs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    identifiant VARCHAR(50) NOT NULL UNIQUE,
-    prenom VARCHAR(100) NOT NULL,
-    nom VARCHAR(100) NOT NULL,
-    email VARCHAR(150) NOT NULL UNIQUE,
-    telephone VARCHAR(20),
-    date_naissance DATE,
-    filiere VARCHAR(100),
-    universite VARCHAR(150),
-    annee_etude INT,
-    type_utilisateur ENUM('etudiant', 'encadrant', 'entreprise') NOT NULL,
-    lettre_motivation TEXT,
-    cv_path VARCHAR(255),
-    email_verifie BOOLEAN DEFAULT FALSE,
-    token_validation VARCHAR(100),
-    date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de Bord Encadreur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7fa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #00838f;
+      color: white;
+      padding: 20px 0;
+    }
+
+    main {
+      margin-top: 50px;
+    }
+
+    .dashboard {
+      background-color: white;
+      display: inline-block;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .logout-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #006064;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .logout-btn:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Bienvenue, Encadreur</h1>
+</header>
+
+<main>
+  <div class="dashboard">
+    <h2>Votre tableau de bord</h2>
+    <p>Vous êtes connecté en tant qu'encadreur.</p>
+
+    <a href="deconnexion.php" class="logout-btn">Se déconnecter</a>
+  </div>
+</main>
+
+</body>
+</html>
