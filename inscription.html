@@ -4,124 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - Gestion de Stages</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Google Identity Services -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-inscription.css">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 
-<!-- Header -->
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="Logo" width="50">
-    </div>
-    <div class="site-name">
-        <h1>Gestion de Stages</h1>
-    </div>
-    <nav class="navbar">
-        <ul>
-            <li><a href="page garde.html">Page d'accueil</a></li>
-            <li><a href="connexion.html">Connexion</a></li>
-        </ul>
-    </nav>
-</header>
-
-<! Main Section >
-<main>
-    <div class="form-container">
-        <h2>Inscription - Étudiant / Encadrant / Entreprise</h2>
-
-        <! Connexion avec Google >
-        <div class="google-signin">
-            <div id="g_id_onload"
-                data-client_id="TON_CLIENT_ID_GOOGLE"
-                data-context="signup"
-                data-ux_mode="popup"
-                data-login_uri="https://ton-site.com/google_signup_handler.php"
-                data-auto_prompt="false">
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-briefcase"></i>
             </div>
-
-            <div class="g_id_signin"
-                data-type="standard"
-                data-shape="rectangular"
-                data-theme="outline"
-                data-text="signup_with"
-                data-size="large"
-                data-logo_alignment="left">
+            <div class="site-name">
+                <h1>Gestion de Stages</h1>
             </div>
         </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="page garde.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="page_connexion.html"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- Formulaire classique -->
-        <form action="submit_registration.php" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="first-name">Prénom :</label>
-                <input type="text" id="first-name" name="first_name" required placeholder="Entrez votre prénom">
+    
+    <main class="form-container">
+        <div class="form-card">
+            <div class="form-header">
+                <h2><i class="fas fa-user-plus"></i> Créer un compte</h2>
+                <p>Rejoignez notre communauté en tant qu'étudiant, encadrant ou entreprise</p>
             </div>
-            <div class="form-group">
-                <label for="last-name">Nom :</label>
-                <input type="text" id="last-name" name="last_name" required placeholder="Entrez votre nom">
-            </div>
-            <div class="form-group">
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required placeholder="Entrez votre email">
-            </div>
-            <div class="form-group">
-                <label for="phone">Numéro de téléphone :</label>
-                <input type="tel" id="phone" name="phone" required placeholder="Entrez votre numéro de téléphone">
-            </div>
-            <div class="form-group">
-                <label for="date-of-birth">Date de naissance :</label>
-                <input type="date" id="date-of-birth" name="date_of_birth" required>
-            </div>
-            <div class="form-group">
-                <label for="department">Filière :</label>
-                <select id="department" name="department" required>
-                    <option value="informatique">Informatique</option>
-                    <option value="maths">Mathématiques</option>
-                    <option value="biologie">Biologie</option>
-                    <option value="gestion">Gestion</option>
-                    <option value="ingenierie">Ingénierie</option>
-                    <option value="commerce">Commerce</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="university">Université :</label>
-                <input type="text" id="university" name="university" required placeholder="Entrez votre université">
-            </div>
-            <div class="form-group">
-                <label for="year">Année d'étude :</label>
-                <input type="number" id="year" name="year" required placeholder="Entrez votre année d'étude">
-            </div>
-            <div class="form-group">
-                <label for="user-type">Je suis un(e) :</label>
-                <select id="user-type" name="user_type" required>
-                    <option value="etudiant">Étudiant</option>
-                    <option value="encadrant">Encadrant</option>
-                    <option value="entreprise">Entreprise</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="cover-letter">Lettre de motivation :</label>
-                <textarea id="cover-letter" name="cover_letter" rows="5" placeholder="Rédigez une courte lettre de motivation (si étudiant)"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="resume">CV (PDF) :</label>
-                <input type="file" id="resume" name="resume" accept=".pdf" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn">S'inscrire</button>
-            </div>
-        </form>
-    </div>
-</main>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 Gestion de Stages. Tous droits réservés.</p>
-</footer>
+            
+            <div class="google-signin">
+                <div id="g_id_onload"
+                    data-client_id="TON_CLIENT_ID_GOOGLE"
+                    data-context="signup"
+                    data-ux_mode="popup"
+                    data-login_uri="https://ton-site.com/google_signup_handler.php"
+                    data-auto_prompt="false">
+                </div>
 
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="rectangular"
+                    data-theme="outline"
+                    data-text="signup_with"
+                    data-size="large"
+                    data-logo_alignment="left">
+                </div>
+                <div class="separator">
+                    <span>ou</span>
+                </div>
+            </div>
+
+           
+            <form action="inscription.php" method="POST" enctype="multipart/form-data" class="inscription-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name"><i class="fas fa-user"></i> Prénom :</label>
+                        <input type="text" id="first-name" name="first_name" required placeholder="Entrez votre prénom">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name"><i class="fas fa-user"></i> Nom :</label>
+                        <input type="text" id="last-name" name="last_name" required placeholder="Entrez votre nom">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email :</label>
+                        <input type="email" id="email" name="email" required placeholder="Entrez votre email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Téléphone :</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Entrez votre numéro">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date-of-birth"><i class="fas fa-calendar"></i> Date de naissance :</label>
+                        <input type="date" id="date-of-birth" name="date_of_birth" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-type"><i class="fas fa-users"></i> Je suis :</label>
+                        <select id="user-type" name="user_type" required>
+                            <option value="etudiant">Étudiant</option>
+                            <option value="encadrant">Encadrant</option>
+                            <option value="entreprise">Entreprise</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="university"><i class="fas fa-graduation-cap"></i> Université :</label>
+                    <input type="text" id="university" name="university" required placeholder="Entrez votre université">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="department"><i class="fas fa-book"></i> Filière :</label>
+                        <select id="department" name="department" required>
+                            <option value="informatique">Informatique</option>
+                            <option value="maths">Mathématiques</option>
+                            <option value="biologie">Biologie</option>
+                            <option value="gestion">Gestion</option>
+                            <option value="ingenierie">Ingénierie</option>
+                            <option value="commerce">Commerce</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year"><i class="fas fa-calendar-alt"></i> Année d'étude :</label>
+                        <input type="number" id="year" name="year" required placeholder="Ex: 3" min="1" max="5">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cover-letter"><i class="fas fa-file-alt"></i> Lettre de motivation :</label>
+                    <textarea id="cover-letter" name="cover_letter" rows="5" placeholder="Rédigez votre lettre de motivation..."></textarea>
+                </div>
+
+                <div class="form-group file-upload">
+                    <label for="resume"><i class="fas fa-file-pdf"></i> CV (PDF) :</label>
+                    <div class="upload-area">
+                        <input type="file" id="resume" name="resume" accept=".pdf" required>
+                        <label for="resume" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i> Choisir un fichier
+                        </label>
+                        <span id="file-name">Aucun fichier choisi</span>
+                    </div>
+                </div>
+
+                <div class="form-group terms">
+                    <label for="terms">J'accepte les conditions d'utilisation et la politique de confidentialité
+                    <input type="checkbox" id="terms" name="terms" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Créer mon compte
+                    </button>
+                </div>
+            </form>
+
+            <div class="login-link">
+                <p>Déjà inscrit ? <a href="page_connexion.html">Connectez-vous</a></p>
+            </div>
+        </div>
+    </main>
+
+ 
+    <footer class="footer">
+        <p>&copy; 2025 Gestion de Stages. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+      
+        document.getElementById('resume').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'Aucun fichier choisi';
+            document.getElementById('file-name').textContent = fileName;
+        });
+
+        
+        document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (this.value === '') {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
-
