@@ -1,26 +1,204 @@
-<!-- dashboard_admin.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tableau de bord Administrateur</title>
-  <link rel="stylesheet" href="/static/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="page_admin.css">
 </head>
 <body>
-  <header>
-    <h1>Bienvenue a Administrateur</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#gestion-etudiants">Gérer les étudiants</a></li>
-      <li><a href="#gestion-entreprises">Gérer les entreprises</a></li>
-      <li><a href="#gestion-encadreurs">Gérer les encadreurs</a></li>
-      <li><a href="#gestion-offres">Voir toutes les offres</a></li>
-      <li><a href="#gestion-rapports">Tous les rapports</a></li>
-      <li><a href="#gestion-evaluations">Suivi des évaluations</a></li>
-      <li><a href="#statistiques">Statistiques du site</a></li>
-      <li><a href="#configuration">Configuration générale</a></li>
+  <!-- Sidebar navigation -->
+  <nav class="admin-sidebar">
+    <div class="admin-header">
+      <div class="admin-avatar">
+        <i class="fas fa-user-shield"></i>
+      </div>
+      <div class="admin-info">
+        <h2>Administrateur</h2>
+        <p>admin@gestiondestages.cm</p>
+      </div>
+    </div>
+
+    <ul class="admin-menu">
+      <li>
+        <a href="#gestion-etudiants" class="active">
+          <i class="fas fa-user-graduate"></i>
+          <span>Gérer les étudiants</span>
+        </a>
+      </li>
+      <li>
+        <a href="#gestion-entreprises">
+          <i class="fas fa-building"></i>
+          <span>Gérer les entreprises</span>
+        </a>
+      </li>
+      <li>
+        <a href="#gestion-encadreurs">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <span>Gérer les encadreurs</span>
+        </a>
+      </li>
+      <li>
+        <a href="#gestion-offres">
+          <i class="fas fa-briefcase"></i>
+          <span>Toutes les offres</span>
+        </a>
+      </li>
+      <li>
+        <a href="#gestion-rapports">
+          <i class="fas fa-file-contract"></i>
+          <span>Tous les rapports</span>
+        </a>
+      </li>
+      <li>
+        <a href="#gestion-evaluations">
+          <i class="fas fa-chart-line"></i>
+          <span>Suivi des évaluations</span>
+        </a>
+      </li>
+      <li>
+        <a href="#statistiques">
+          <i class="fas fa-chart-pie"></i>
+          <span>Statistiques du site</span>
+        </a>
+      </li>
+      <li>
+        <a href="#configuration">
+          <i class="fas fa-cog"></i>
+          <span>Configuration générale</span>
+        </a>
+      </li>
     </ul>
+
+    <div class="admin-footer">
+      <a href="#">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Déconnexion</span>
+      </a>
+    </div>
   </nav>
+
+  <!-- Main content area -->
+  <main class="admin-content">
+    <header class="admin-topbar">
+      <div class="search-container">
+        <input type="text" placeholder="Rechercher...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <div class="admin-actions">
+        <button class="notification-btn">
+          <i class="fas fa-bell"></i>
+          <span class="notification-count">3</span>
+        </button>
+        <div class="admin-settings">
+          <i class="fas fa-user-cog"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-container">
+      <h1 class="dashboard-title">Tableau de bord Administrateur</h1>
+      <p class="dashboard-subtitle">Gérez toutes les activités de la plateforme</p>
+
+      <!-- Stats cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3>Étudiants</h3>
+          <div class="stat-value">1,254</div>
+          <div class="stat-change">+24 cette semaine</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Entreprises</h3>
+          <div class="stat-value">186</div>
+          <div class="stat-change">+3 ce mois</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Offres actives</h3>
+          <div class="stat-value">89</div>
+          <div class="stat-change">+7 cette semaine</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <h3>Rapports validés</h3>
+          <div class="stat-value">542</div>
+          <div class="stat-change">+42 ce mois</div>
+        </div>
+      </div>
+
+      <!-- Recent activities -->
+      <div class="dashboard-section">
+        <div class="section-header">
+          <h2><i class="fas fa-history"></i> Activités récentes</h2>
+          <button class="btn btn-outline">Voir tout</button>
+        </div>
+        
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <div class="activity-content">
+              <p><strong>Tefach Habib</strong> a créé un nouveau compte étudiant</p>
+              <div class="activity-time">Il y a 15 minutes</div>
+            </div>
+          </div>
+          
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="activity-content">
+              <p><strong>Orange Cameroun</strong> a publié une nouvelle offre de stage</p>
+              <div class="activity-time">Il y a 2 heures</div>
+            </div>
+          </div>
+          
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-file-signature"></i>
+            </div>
+            <div class="activity-content">
+              <p><strong>Thomas Vanneck</strong> a soumis son rapport de stage</p>
+              <div class="activity-time">Hier à 14:30</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Gestion du menu actif
+    document.querySelectorAll('.admin-menu a').forEach(item => {
+      item.addEventListener('click', function() {
+        document.querySelectorAll('.admin-menu a').forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+
+    // Notification badge toggle
+    const notificationBtn = document.querySelector('.notification-btn');
+    notificationBtn.addEventListener('click', function() {
+      this.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
