@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $filiere    = $_POST['department'];
     $universite = $_POST['university'];
     $annee      = $_POST['year'];
-    $type_utilisateur = strtolower($_POST['user_type']); // étudiant / entreprise / encadreur
+    $type_utilisateur = strtolower($_POST['user_type']);
     $lettre_motivation = $_POST['cover_letter'];
     $mot_de_passe = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
@@ -20,8 +20,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cv = $_FILES['resume'];
     $cv_path = '';
     if ($cv['error'] === 0) {
-        $cv_path = 'uploads/' . basename($cv['name']);
+        $upload_dir = 'uploads/';
+        if (!file_exists($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+        $cv_path = $upload_dir . basename($cv['name']);
         move_uploaded_file($cv['tmp_name'], $cv_path);
+    }
+
+    // Vérifier si l'email existe déjà
+    $check = $pdo->prepare("SELECT id FROM utilisateurs WHERE email = :email");
+    $check->execute([':email' => $email]);
+    if ($check->rowCount() > 0) {
+        echo "Cette adresse email est déjà utilisée. <a href='page_connexion.html'>Se connecter</a>";
+        exit;
     }
 
     // Insertion dans la base de données
