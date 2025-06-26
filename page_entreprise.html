@@ -2,59 +2,87 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Tableau de bord Entreprise</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link rel="stylesheet" href="page_entreprise.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Espace Entreprise - Tableau de bord</title>
+  <link rel="stylesheet" href="page_entreprise.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600,400&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Bienvenue Entreprise</h1>
+  <header class="header">
+    <div class="logo-area">
+      <i class="fa-solid fa-building"></i>
+      <span class="platform-title">Plateforme Stages</span>
+    </div>
+    <div class="user-area">
+      <span class="welcome">Bonjour, <b>Entreprise</b></span>
+      <button class="logout-btn" title="Déconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    </div>
   </header>
 
-  <div class="container">
-    <nav>
+  <div class="dashboard">
+    <nav class="sidebar" id="sidebar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
       <ul>
-        <li><a href="#publier" class="nav-link">📢 Publier une offre</a></li>
-        <li><a href="#candidatures" class="nav-link">📥 Gérer les candidatures</a></li>
-        <li><a href="#stagiaires" class="nav-link">👨‍🎓 Suivi des stagiaires</a></li>
-        <li><a href="#evaluations" class="nav-link">📊 Évaluer les étudiants</a></li>
-        <li><a href="#profil" class="nav-link">🛠️ Gérer mon profil</a></li>
+        <li><a href="#dashboard" class="active nav-link"><i class="fa-solid fa-chart-line"></i> <span>Tableau de bord</span></a></li>
+        <li><a href="#publier" class="nav-link"><i class="fa-solid fa-bullhorn"></i> <span>Publier une offre</span></a></li>
+        <li><a href="#candidatures" class="nav-link"><i class="fa-solid fa-inbox"></i> <span>Candidatures</span></a></li>
+        <li><a href="#stagiaires" class="nav-link"><i class="fa-solid fa-user-graduate"></i> <span>Stagiaires</span></a></li>
+        <li><a href="#evaluations" class="nav-link"><i class="fa-solid fa-star-half-stroke"></i> <span>Évaluations</span></a></li>
+        <li><a href="#profil" class="nav-link"><i class="fa-solid fa-user-gear"></i> <span>Profil</span></a></li>
       </ul>
     </nav>
 
-    <main>
-      <section id="publier" class="window">
-        <h2>📢 Publier une offre</h2>
-        <form id="publier-form">
-          <label for="titreOffre">Titre de l'offre :</label>
-          <input type="text" id="titreOffre" name="titreOffre" required />
-
-          <label for="descriptionOffre">Description :</label>
-          <textarea id="descriptionOffre" name="descriptionOffre" required></textarea>
-
-          <label for="datePublication">Date de publication :</label>
-          <input type="date" id="datePublication" name="datePublication" required />
-
-          <button type="submit">Publier</button>
-        </form>
-
-        <h3>Offres publiées :</h3>
-        <ul id="liste-offres"></ul>
+    <main class="main-content">
+      <!-- Tableau de bord résumé -->
+      <section id="dashboard" class="window active">
+        <h2><i class="fa-solid fa-chart-line"></i> Tableau de bord</h2>
+        <div class="cards">
+          <div class="card"><span class="card-title">Offres</span><span id="offres-count" class="card-value">0</span></div>
+          <div class="card"><span class="card-title">Candidatures</span><span id="candidatures-count" class="card-value">0</span></div>
+          <div class="card"><span class="card-title">Stagiaires</span><span id="stagiaires-count" class="card-value">0</span></div>
+        </div>
+        <div class="notifications" id="notifications">
+          <div class="notif notif-info"><i class="fa-solid fa-circle-info"></i> Bienvenue dans votre espace entreprise !</div>
+        </div>
       </section>
 
+      <!-- Publier une offre -->
+      <section id="publier" class="window">
+        <h2><i class="fa-solid fa-bullhorn"></i> Publier une offre</h2>
+        <form id="publier-form">
+          <label for="titreOffre">Titre de l'offre</label>
+          <input type="text" id="titreOffre" name="titreOffre" required />
+
+          <label for="descriptionOffre">Description</label>
+          <textarea id="descriptionOffre" name="descriptionOffre" rows="3" required></textarea>
+
+          <label for="datePublication">Date de publication</label>
+          <input type="date" id="datePublication" name="datePublication" required />
+
+          <button type="submit" class="main-btn">Publier</button>
+        </form>
+
+        <h3>Offres publiées</h3>
+        <ul id="liste-offres" class="list"></ul>
+      </section>
+
+      <!-- Gérer les candidatures -->
       <section id="candidatures" class="window">
-        <h2>📥 Gérer les candidatures</h2>
+        <h2><i class="fa-solid fa-inbox"></i> Candidatures</h2>
         <form id="candidatures-form">
-          <label for="nomEtudiant">Nom étudiant :</label>
+          <label for="nomEtudiant">Nom étudiant</label>
           <input type="text" id="nomEtudiant" name="nomEtudiant" required />
 
-          <label for="poste">Poste :</label>
+          <label for="poste">Poste</label>
           <input type="text" id="poste" name="poste" required />
 
-          <label for="dateCandidature">Date de candidature :</label>
+          <label for="dateCandidature">Date de candidature</label>
           <input type="date" id="dateCandidature" name="dateCandidature" required />
 
-          <label for="statut">Statut :</label>
+          <label for="statut">Statut</label>
           <select id="statut" name="statut" required>
             <option value="">--Choisir--</option>
             <option value="En attente">En attente</option>
@@ -62,75 +90,166 @@
             <option value="Refusée">Refusée</option>
           </select>
 
-          <button type="submit">Ajouter candidature</button>
+          <button type="submit" class="main-btn">Ajouter</button>
         </form>
 
-        <h3>Candidatures reçues :</h3>
-        <ul id="liste-candidatures"></ul>
+        <h3>Candidatures reçues</h3>
+        <ul id="liste-candidatures" class="list"></ul>
       </section>
 
+      <!-- Suivi des stagiaires -->
       <section id="stagiaires" class="window">
-        <h2>👨‍🎓 Suivi des stagiaires</h2>
+        <h2><i class="fa-solid fa-user-graduate"></i> Stagiaires</h2>
         <form id="stagiaires-form">
-          <label for="nomStagiaire">Nom du stagiaire :</label>
+          <label for="nomStagiaire">Nom du stagiaire</label>
           <input type="text" id="nomStagiaire" name="nomStagiaire" required />
 
-          <label for="periode">Période :</label>
-          <input type="text" id="periode" name="periode" required />
+          <label for="periode">Période</label>
+          <input type="text" id="periode" name="periode" placeholder="ex : Mars à Juin 2025" required />
 
-          <label for="commentaires">Commentaires :</label>
-          <textarea id="commentaires" name="commentaires"></textarea>
+          <label for="commentaires">Commentaires</label>
+          <textarea id="commentaires" name="commentaires" rows="2"></textarea>
 
-          <button type="submit">Ajouter stagiaire</button>
+          <button type="submit" class="main-btn">Ajouter</button>
         </form>
 
-        <h3>Liste des stagiaires :</h3>
-        <ul id="liste-stagiaires"></ul>
+        <h3>Liste des stagiaires</h3>
+        <ul id="liste-stagiaires" class="list"></ul>
       </section>
 
+      <!-- Évaluations -->
       <section id="evaluations" class="window">
-        <h2>📊 Évaluer les étudiants</h2>
+        <h2><i class="fa-solid fa-star-half-stroke"></i> Évaluations</h2>
         <form id="evaluations-form">
-          <label for="nomEtudiantEval">Nom de l'étudiant :</label>
+          <label for="nomEtudiantEval">Nom étudiant</label>
           <input type="text" id="nomEtudiantEval" name="nomEtudiantEval" required />
 
-          <label for="matiereEval">Matière :</label>
+          <label for="matiereEval">Matière</label>
           <input type="text" id="matiereEval" name="matiereEval" required />
 
-          <label for="noteEval">Note :</label>
+          <label for="noteEval">Note</label>
           <input type="number" id="noteEval" name="noteEval" min="0" max="20" step="0.1" required />
 
-          <label for="dateEval">Date :</label>
+          <label for="dateEval">Date</label>
           <input type="date" id="dateEval" name="dateEval" required />
 
-          <button type="submit">Ajouter évaluation</button>
+          <button type="submit" class="main-btn">Ajouter</button>
         </form>
-
-        <h3>Évaluations :</h3>
-        <ul id="liste-evaluations"></ul>
+        <h3>Évaluations</h3>
+        <ul id="liste-evaluations" class="list"></ul>
       </section>
 
+      <!-- Profil entreprise -->
       <section id="profil" class="window">
-        <h2>🛠️ Gérer mon profil</h2>
+        <h2><i class="fa-solid fa-user-gear"></i> Profil entreprise</h2>
         <form id="profil-form">
-          <label for="nomEntreprise">Nom de l'entreprise :</label>
+          <label for="nomEntreprise">Nom</label>
           <input type="text" id="nomEntreprise" name="nomEntreprise" required />
 
-          <label for="adresse">Adresse :</label>
+          <label for="adresse">Adresse</label>
           <input type="text" id="adresse" name="adresse" required />
 
-          <label for="contact">Contact :</label>
+          <label for="contact">Contact</label>
           <input type="text" id="contact" name="contact" required />
 
-          <button type="submit">Mettre à jour</button>
+          <button type="submit" class="main-btn">Mettre à jour</button>
         </form>
-
-        <h3>Profil actuel :</h3>
-        <ul id="liste-profil"></ul>
+        <h3>Profil actuel</h3>
+        <ul id="liste-profil" class="list"></ul>
       </section>
     </main>
   </div>
 
-  <script src="page_entreprise.js"></script>
+  <footer class="footer">
+    © 2025 Plateforme Stages Cameroun – Entreprises.
+  </footer>
+  <script>
+    // Navigation entre les rubriques (SPA)
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.onclick = function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.window').forEach(win => win.classList.remove('active'));
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        const section = document.querySelector(this.getAttribute('href'));
+        if(section) section.classList.add('active');
+        this.classList.add('active');
+        if(window.innerWidth <= 900) document.getElementById('sidebar').classList.remove('open');
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      };
+    });
+
+    // Sidebar mobile
+    document.getElementById('sidebarToggle').onclick = () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    };
+
+    // Petites notifications exemple
+    function addNotif(txt, type="notif-success") {
+      const notif = document.createElement("div");
+      notif.className = "notif " + type;
+      notif.innerHTML = '<i class="fa-solid fa-circle-check"></i> ' + txt;
+      document.getElementById("notifications").appendChild(notif);
+      setTimeout(()=>notif.remove(), 4000);
+    }
+
+    // Compteurs dynamiques
+    function updateCounts() {
+      document.getElementById('offres-count').textContent = document.querySelectorAll('#liste-offres li').length;
+      document.getElementById('candidatures-count').textContent = document.querySelectorAll('#liste-candidatures li').length;
+      document.getElementById('stagiaires-count').textContent = document.querySelectorAll('#liste-stagiaires li').length;
+    }
+    // Gestionnaires de formulaires dynamiques (exemple pour offres, même logique pour les autres)
+    document.getElementById('publier-form').onsubmit = function(e) {
+      e.preventDefault();
+      const titre = this.titreOffre.value.trim(), desc = this.descriptionOffre.value.trim(), date = this.datePublication.value;
+      if(!titre || !desc || !date) return;
+      const li = document.createElement('li');
+      li.innerHTML = `<b>${titre}</b> <small>(${date})</small><br>${desc}`;
+      document.getElementById('liste-offres').appendChild(li);
+      this.reset();
+      addNotif('Offre publiée avec succès !');
+      updateCounts();
+    };
+    document.getElementById('candidatures-form').onsubmit = function(e) {
+      e.preventDefault();
+      const nom = this.nomEtudiant.value.trim(), poste = this.poste.value.trim(), date = this.dateCandidature.value, statut = this.statut.value;
+      if(!nom || !poste || !date || !statut) return;
+      const li = document.createElement('li');
+      li.innerHTML = `<b>${nom}</b> - <i>${poste}</i> <small>(${date})</small> <span class="statut ${statut}">${statut}</span>`;
+      document.getElementById('liste-candidatures').appendChild(li);
+      this.reset();
+      addNotif('Candidature ajoutée !');
+      updateCounts();
+    };
+    document.getElementById('stagiaires-form').onsubmit = function(e) {
+      e.preventDefault();
+      const nom = this.nomStagiaire.value.trim(), periode = this.periode.value.trim(), comm = this.commentaires.value.trim();
+      if(!nom || !periode) return;
+      const li = document.createElement('li');
+      li.innerHTML = `<b>${nom}</b> <small>(${periode})</small><br>${comm}`;
+      document.getElementById('liste-stagiaires').appendChild(li);
+      this.reset();
+      addNotif('Stagiaire ajouté avec succès !');
+      updateCounts();
+    };
+    document.getElementById('evaluations-form').onsubmit = function(e) {
+      e.preventDefault();
+      const nom = this.nomEtudiantEval.value.trim(), mat = this.matiereEval.value.trim(), note = this.noteEval.value, date = this.dateEval.value;
+      if(!nom || !mat || !note || !date) return;
+      const li = document.createElement('li');
+      li.innerHTML = `<b>${nom}</b> - <i>${mat}</i> : <span class="note">${note}/20</span> <small>(${date})</small>`;
+      document.getElementById('liste-evaluations').appendChild(li);
+      this.reset();
+      addNotif('Évaluation ajoutée !');
+    };
+    document.getElementById('profil-form').onsubmit = function(e) {
+      e.preventDefault();
+      const nom = this.nomEntreprise.value.trim(), adresse = this.adresse.value.trim(), contact = this.contact.value.trim();
+      if(!nom || !adresse || !contact) return;
+      document.getElementById('liste-profil').innerHTML =
+        `<li><b>Nom :</b> ${nom}</li><li><b>Adresse :</b> ${adresse}</li><li><b>Contact :</b> ${contact}</li>`;
+      addNotif('Profil mis à jour !');
+    };
+  </script>
 </body>
 </html>
