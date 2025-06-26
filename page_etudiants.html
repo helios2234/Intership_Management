@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Tableau de bord Étudiant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="page_etudiant.css">
 </head>
 <body>
   <header>
-    <h1>Bienvenue Étudiant</h1>
+    <h1><span class="logo">🎓</span> Bienvenue Étudiant</h1>
   </header>
 
   <div class="container">
@@ -23,9 +24,9 @@
     </nav>
 
     <main>
-      <section id="demande" class="window">
+      <section id="demande" class="window animate__animated animate__fadeIn">
         <h2>📨 Faire une demande de stage</h2>
-        <form id="demande-form">
+        <form id="demande-form" autocomplete="off">
           <label for="domaine">Domaine :</label>
           <input type="text" id="domaine" name="domaine" required />
 
@@ -62,27 +63,27 @@
           <label for="region">Région :</label>
           <input type="text" id="region" name="region" required />
 
-          <button type="submit">Soumettre</button>
+          <button type="submit" class="btn-main">Soumettre</button>
         </form>
       </section>
 
-      <section id="offres" class="window">
+      <section id="offres" class="window animate__animated animate__fadeIn">
         <h2>📄 Demandes disponibles</h2>
         <div class="offre">
-          <h3>Entreprise ABC</h3>
-          <p><strong>Description :</strong> Développement d'une application web de gestion.</p>
+          <h3>CAMTEL</h3>
+          <p><strong>Description :</strong> Distributeur officiel de reseau au Cameroun.</p>
           <p><strong>Région :</strong> Centre</p>
           <p><strong>Date de début :</strong> 2025-07-01</p>
           <p><strong>Date de fin :</strong> 2025-09-30</p>
-          <p><strong>Email :</strong> contact@entrepriseabc.cm</p>
+          <p><strong>Email :</strong> contact@camtel.cm</p>
           <p><strong>Domaine :</strong> Informatique</p>
-          <button onclick="alert('Votre candidature a été envoyée à Entreprise ABC.')">Postuler</button>
+          <button class="btn-main" onclick="alert('Votre candidature a été envoyée à Entreprise ABC.')">Postuler</button>
         </div>
       </section>
 
-      <section id="rapport" class="window">
+      <section id="rapport" class="window animate__animated animate__fadeIn">
         <h2>📝 Soumettre un rapport</h2>
-        <form id="rapport-form">
+        <form id="rapport-form" autocomplete="off">
           <label for="titre">Titre du rapport :</label>
           <input type="text" id="titre" name="titre" required />
 
@@ -95,31 +96,31 @@
           <label for="date">Date de soumission :</label>
           <input type="date" id="date" name="date" required />
 
-          <button type="submit">Soumettre</button>
+          <button type="submit" class="btn-main">Soumettre</button>
         </form>
-        <ul id="liste-rapports"></ul>
+        <ul id="liste-rapports" class="data-list"></ul>
       </section>
 
-      <section id="evaluation" class="window">
+      <section id="evaluation" class="window animate__animated animate__fadeIn">
         <h2>📊 Résultats et évaluations</h2>
         <div class="resultat">
-          <h3>Entreprise ABC</h3>
+          <h3>ANTIC</h3>
           <p class="appreciation">Appréciation : Très bon travail, bonne implication.</p>
           <div class="note">Note : 17.5/20</div>
         </div>
         <div class="resultat">
-          <h3>Entreprise XYZ</h3>
+          <h3>Brasseries du Cameroun</h3>
           <p class="appreciation">Appréciation : Manque d'initiative, à améliorer.</p>
           <div class="note">Note : 11.0/20</div>
         </div>
       </section>
 
-      <section id="suivi" class="window">
+      <section id="suivi" class="window animate__animated animate__fadeIn">
         <h2>🔍 Suivre ses demandes</h2>
-        <ul>
-          <li><strong>Entreprise ABC</strong> - Demande de stage - <span class="statut">Acceptée</span></li>
-          <li><strong>Entreprise XYZ</strong> - Candidature - <span class="statut">En attente</span></li>
-          <li><strong>Entreprise DEF</strong> - Demande de stage - <span class="statut">Refusée</span></li>
+        <ul class="data-list">
+          <li><strong>ANTIC</strong> - Demande de stage - <span class="statut accept">Acceptée</span></li>
+          <li><strong>Brasseries du Cameroun</strong> - Candidature - <span class="statut pending">En attente</span></li>
+          <li><strong>Camtel</strong> - Demande de stage - <span class="statut refuse">Refusée</span></li>
         </ul>
       </section>
     </main>
