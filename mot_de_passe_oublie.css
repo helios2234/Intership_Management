@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(135deg, #4f8cff 0%, #47e4c2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.background-blur {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(5px);
+  z-index: 0;
+}
+
+.reset-container {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(44,62,80,0.13);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 330px;
+  max-width: 390px;
+  width: 90vw;
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reset-container h2 {
+  color: #3466af;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.reset-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reset-container label {
+  font-weight: 500;
+  color: #33455d;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.reset-container input[type="email"] {
+  padding: 0.7rem 1rem;
+  border: 1px solid #cbd6e2;
+  border-radius: 7px;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  background: #f7fafc;
+  transition: border-color 0.2s;
+}
+
+.reset-container input[type="email"]:focus {
+  border-color: #47e4c2;
+  outline: none;
+}
+
+.btn-main {
+  background: linear-gradient(90deg, #4f8cff 60%, #47e4c2 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  padding: 0.8rem 0;
+  width: 100%;
+  margin-top: 0.2rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+}
+
+.btn-main:hover {
+  background: linear-gradient(90deg, #47e4c2 0%, #4f8cff 90%);
+  box-shadow: 0 4px 16px rgba(71,228,194,0.14);
+}
+
+.back-link {
+  margin-top: 1.7rem;
+  text-align: center;
+}
+
+.back-link a {
+  color: #4f8cff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.18s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.back-link a:hover {
+  color: #47e4c2;
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .reset-container {
+    min-width: unset;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .reset-container h2 {
+    font-size: 1.13rem;
+  }
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+  background: linear-gradient(135deg,rgb(214, 112, 81) 0%,rgb(109, 216, 193) 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background: #fff;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.16);
+  width: 100%;
+  max-width: 370px;
+}
+
+.login-form h1 {
+  text-align: center;
+  color:rgb(132, 62, 153);
+  margin-bottom: 1.8rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.6rem;
+  color: #2d3a4a;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #cbd6e2;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #f7fafc;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #47e4c2;
+  outline: none;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  width: 100%;
+  padding: 0.75rem 0;
+  background: linear-gradient(90deg,rgb(60, 40, 177) 60%, #47e4c2 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.12rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 0.4rem;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.09);
+}
+.btn:hover {
+  background: linear-gradient(90deg, #47e4c2 0%, #4f8cff 90%);
+  box-shadow: 0 4px 16px rgba(71,228,194,0.14);
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.97rem;
+  color: #6e7b8a;
+  margin-top: 0.9rem;
+}
+.bottom-links a {
+  color: #4f8cff;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.bottom-links a:hover {
+  color: #47e4c2;
+  text-decoration: underline;
+}
+
+@media (max-width: 450px) {
+  .login-container {
+    padding: 1.3rem 0.7rem;
+    max-width: 97vw;s
+  }
+  .login-form h1 {
+    font-size: 1.5rem;
+  }
+}

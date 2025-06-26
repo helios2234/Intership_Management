@@ -1,0 +1,375 @@
+/* fichier : page_etudiant.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f9;
+  color: #333;
+}
+
+header {
+  background:rgb(23, 102, 112),rgb(40, 41, 41) ;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg,rgb(138, 69, 145) 0%,rgb(44, 219, 111) 100%);
+  font-family: 'Montserrat', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  background: (135deg,rgb(138, 69, 145) 0%,rgb(44, 219, 111) 100%);
+  box-shadow: 0 4px 18px rgba(44,62,80,0.07);
+  padding: 1.3rem 0;
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color:rgb(19, 18, 18);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header .logo {
+  font-size: 2.1rem;
+  margin-right: .5rem;
+  vertical-align: middle;
+}
+
+.container {
+  display: flex;
+  gap: 2.5rem;
+  margin: 2.3rem auto;
+  max-width: 1100px;
+  width: 95%;
+  align-items: flex-start;
+}
+
+nav {
+  min-width: 210px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+  padding: 2rem 1.2rem 2rem 1.2rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-bottom: 1.3rem;
+}
+
+.nav-link {
+  color: #4f8cff;
+  font-weight: 600;
+  font-size: 1.07rem;
+  text-decoration: none;
+  display: block;
+  padding: 0.7rem 1rem;
+  border-radius: 7px;
+  transition: background 0.19s, color 0.19s;
+  background: none;
+}
+.nav-link:hover, .nav-link:focus {
+  background: #47e4c217;
+  color: #2186d4;
+  outline: none;
+}
+
+main {
+  flex: 1;
+}
+
+.window {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.11);
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin-bottom: 2rem;
+  animation-duration: 0.7s;
+}
+
+.window h2 {
+  color: #3566af;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 0;
+  margin-bottom: 1.4rem;
+}
+
+.window label {
+  font-weight: 500;
+  color: #33455d;
+  margin-bottom: 0.4rem;
+  display: block;
+  font-size: 0.98rem;
+}
+
+.window input,
+.window textarea,
+.window select {
+  width: 100%;
+  padding: 0.68rem 1rem;
+  border: 1px solid #cbd6e2;
+  border-radius: 7px;
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+  background: #f7fafc;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.window input:focus,
+.window textarea:focus,
+.window select:focus {
+  border-color: #47e4c2;
+  outline: none;
+}
+
+.btn-main {
+  background: linear-gradient(90deg, #4f8cff 60%, #47e4c2 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  padding: 0.75rem 0;
+  width: 100%;
+  margin-top: 0.3rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.09);
+}
+
+.btn-main:hover {
+  background: linear-gradient(90deg, #47e4c2 0%, #4f8cff 90%);
+  box-shadow: 0 4px 16px rgba(71,228,194,0.14);
+}
+
+.offre {
+  background: #f7fafc;
+  border-radius: 9px;
+  box-shadow: 0 1px 4px rgba(79,140,255,0.10);
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.2rem;
+  color: #2c3e50;
+}
+
+.offre button {
+  margin-top: 1rem;
+}
+
+.resultat {
+  background: #f7fafc;
+  border-radius: 9px;
+  box-shadow: 0 1px 4px rgba(79,140,255,0.10);
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.resultat h3 {
+  margin: 0 0 0.7rem 0;
+  color: #3566af;
+}
+
+.resultat .note {
+  font-weight: 700;
+  color: #47e4c2;
+  font-size: 1.12rem;
+}
+
+.resultat .appreciation {
+  color: #444d5d;
+  margin-bottom: 0.7rem;
+}
+
+.data-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #3b4d63;
+  font-size: 0.99rem;
+}
+
+.data-list li {
+  margin-bottom: 0.7rem;
+  padding: 0.65rem 0.9rem;
+  background: #f6faff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(79,140,255,0.06);
+}
+
+.statut {
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.98em;
+}
+.statut.accept {
+  background: #d2fadc;
+  color:rgb(109, 104, 116);
+}
+.statut.pending {
+  background: #fff6c1;
+  color: #bfa000;
+}
+.statut.refuse {
+  background: #ffd7d7;
+  color: #c92a2a;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  nav {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 0.6rem;
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  }
+  main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .window {
+    padding: 1.1rem 0.6rem 1rem 0.6rem;
+  }
+  header h1 {
+    font-size: 1.25rem;
+  }
+  nav ul li {
+    margin-bottom: 0.9rem;
+  }
+}
+
+nav {
+  min-width: 260px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin: 1rem 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color:rgb(81, 85, 82);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease-in-out, color 0.3s;
+}
+
+.nav-link:hover {
+  color:rgb(64, 10, 80);
+  transform: translateX(5px);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
+}
+
+.window {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: #2b9348;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #007f5f;
+}
+
+.offre, .resultat, #suivi ul li {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-left: 4px solid #2b9348;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.resultat .note {
+  font-size: 1.1rem;
+  color: #007f5f;
+  text-align: right;
+  font-weight: bold;
+}
+
+.statut {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.statut::before {
+  content: '•';
+  color: orange;
+  margin-right: 0.5rem;
+}
+
+.statut.Acceptée::before {
+  color: green;
+}
+
+.statut.Refusée::before {
+  color: red;
+}
+
+
+
+
+
+
+
+
