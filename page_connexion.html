@@ -4,37 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Connexion - Gestion de Stages</title>
-  <link rel="stylesheet" href="page_connexion.css"/>
+  <link rel="stylesheet" href="page_connexion.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-  <div class="background-blur"></div>
-
   <div class="login-container">
-    <h2>Connexion</h2>
-    <form id="loginForm" action="traitement_connexion.php" method="POST">
-      <label for="user_type">Je suis :</label>
-      <select id="user_type" name="user_type" required>
-        <option value="">-- Sélectionnez --</option>
-        <option value="etudiant">Étudiant</option>
-        <option value="entreprise">Entreprise</option>
-        <option value="encadreur">Encadreur</option>
-      </select>
-
-      <label for="email">Adresse email :</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="password">Mot de passe :</label>
-      <input type="password" id="password" name="password" required />
-
-      <button type="submit">Se connecter</button>
+    <form id="loginForm" action="traitement_connexion.php" method="POST" class="login-form">
+      <h1><i class="fas fa-user-circle"></i> Connexion</h1>
+      <div class="form-group">
+        <label for="user_type"><i class="fas fa-users"></i> Je suis :</label>
+        <select id="user_type" name="user_type" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="etudiant">Étudiant</option>
+          <option value="entreprise">Entreprise</option>
+          <option value="encadreur">Encadreur</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Email :</label>
+        <input type="email" id="email" name="email" required placeholder="Entrez votre email">
+      </div>
+      <div class="form-group">
+        <label for="password"><i class="fas fa-lock"></i> Mot de passe :</label>
+        <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe">
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-sign-in-alt"></i> Connexion
+      </button>
+      <div class="bottom-links">
+        <a href="mot_de_passe_oublie.html">Mot de passe oublié ?</a>
+        <span> | </span>
+        <a href="page_inscription.html">Créer un compte</a>
+      </div>
     </form>
-
-    <div class="bottom-links">
-      <p><a href="#">Mot de passe oublié ?</a></p>
-      <p>Pas encore inscrit ? <a href="page_inscription.html">Créer un compte</a></p>
-    </div>
   </div>
-
-  <script src="page_inscription.js"></script>
 </body>
 </html>
