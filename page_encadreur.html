@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Tableau de bord Entreprise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link rel="stylesheet" href="page_entreprise.css" />
+  <link rel="stylesheet" href="page_encadreur.css" />
 </head>
 <body>
   <header>
-    <h1>Bienvenue Entreprise</h1>
+    <h1><span class="logo">🏢</span> Bienvenue Encadreur</h1>
   </header>
 
   <div class="container">
@@ -25,7 +26,7 @@
     <main>
       <section id="publier" class="window animate__animated animate__fadeIn">
         <h2>📢 Publier une offre</h2>
-        <form id="publier-form">
+        <form id="publier-form" autocomplete="off">
           <label for="titreOffre">Titre de l'offre :</label>
           <input type="text" id="titreOffre" name="titreOffre" required />
 
@@ -35,17 +36,17 @@
           <label for="datePublication">Date de publication :</label>
           <input type="date" id="datePublication" name="datePublication" required />
 
-          <button type="submit">Publier</button>
+          <button type="submit" class="btn-main">Publier</button>
         </form>
 
         <hr />
         <h3>Offres publiées :</h3>
-        <ul id="liste-offres"></ul>
+        <ul id="liste-offres" class="data-list"></ul>
       </section>
 
       <section id="candidatures" class="window animate__animated animate__fadeIn">
         <h2>📋 Gérer les candidatures</h2>
-        <form id="candidatures-form">
+        <form id="candidatures-form" autocomplete="off">
           <label for="nomEtudiant">Nom étudiant :</label>
           <input type="text" id="nomEtudiant" name="nomEtudiant" required />
 
@@ -63,17 +64,17 @@
             <option value="Refusée">Refusée</option>
           </select>
 
-          <button type="submit">Ajouter candidature</button>
+          <button type="submit" class="btn-main">Ajouter candidature</button>
         </form>
 
         <hr />
         <h3>Candidatures reçues :</h3>
-        <ul id="liste-candidatures"></ul>
+        <ul id="liste-candidatures" class="data-list"></ul>
       </section>
 
       <section id="stagiaires" class="window animate__animated animate__fadeIn">
         <h2>👥 Suivi des stagiaires</h2>
-        <form id="stagiaires-form">
+        <form id="stagiaires-form" autocomplete="off">
           <label for="nomStagiaire">Nom du stagiaire :</label>
           <input type="text" id="nomStagiaire" name="nomStagiaire" required />
 
@@ -81,19 +82,19 @@
           <input type="text" id="periode" name="periode" placeholder="Ex : Juin - Août 2025" required />
 
           <label for="commentaires">Commentaires :</label>
-          <textarea id="commentaires" name="commentaires" rows="4"></textarea>
+          <textarea id="commentaires" name="commentaires" rows="3"></textarea>
 
-          <button type="submit">Ajouter stagiaire</button>
+          <button type="submit" class="btn-main">Ajouter stagiaire</button>
         </form>
 
         <hr />
         <h3>Liste des stagiaires :</h3>
-        <ul id="liste-stagiaires"></ul>
+        <ul id="liste-stagiaires" class="data-list"></ul>
       </section>
 
       <section id="evaluations" class="window animate__animated animate__fadeIn">
         <h2>📝 Évaluer les étudiants</h2>
-        <form id="evaluations-form">
+        <form id="evaluations-form" autocomplete="off">
           <label for="nomEtudiantEval">Nom de l'étudiant :</label>
           <input type="text" id="nomEtudiantEval" name="nomEtudiantEval" required />
 
@@ -106,17 +107,17 @@
           <label for="dateEval">Date :</label>
           <input type="date" id="dateEval" name="dateEval" required />
 
-          <button type="submit">Ajouter évaluation</button>
+          <button type="submit" class="btn-main">Ajouter évaluation</button>
         </form>
 
         <hr />
         <h3>Évaluations :</h3>
-        <ul id="liste-evaluations"></ul>
+        <ul id="liste-evaluations" class="data-list"></ul>
       </section>
 
       <section id="profil" class="window animate__animated animate__fadeIn">
         <h2>⚙️ Gérer mon profil</h2>
-        <form id="profil-form">
+        <form id="profil-form" autocomplete="off">
           <label for="nomEntreprise">Nom de l'entreprise :</label>
           <input type="text" id="nomEntreprise" name="nomEntreprise" required />
 
@@ -126,16 +127,15 @@
           <label for="contact">Contact :</label>
           <input type="text" id="contact" name="contact" required />
 
-          <button type="submit">Mettre à jour</button>
+          <button type="submit" class="btn-main">Mettre à jour</button>
         </form>
 
         <hr />
         <h3>Profil actuel :</h3>
-        <ul id="liste-profil"></ul>
+        <ul id="liste-profil" class="data-list"></ul>
       </section>
     </main>
   </div>
-
   <script src="page_entreprise.js"></script>
 </body>
 </html>
