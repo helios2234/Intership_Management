@@ -6,7 +6,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// Offres
+// Offers
 document.getElementById('publier-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const titre = document.getElementById('titreOffre').value;
@@ -19,7 +19,7 @@ document.getElementById('publier-form').addEventListener('submit', function(e) {
   this.reset();
 });
 
-// Candidatures
+// applications
 document.getElementById('candidatures-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const nom = document.getElementById('nomEtudiant').value;
@@ -33,7 +33,7 @@ document.getElementById('candidatures-form').addEventListener('submit', function
   this.reset();
 });
 
-// Stagiaires
+// intern
 document.getElementById('stagiaires-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const nom = document.getElementById('nomStagiaire').value;
@@ -46,7 +46,7 @@ document.getElementById('stagiaires-form').addEventListener('submit', function(e
   this.reset();
 });
 
-// Évaluations
+// assesment
 document.getElementById('evaluations-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const nom = document.getElementById('nomEtudiantEval').value;
@@ -60,7 +60,7 @@ document.getElementById('evaluations-form').addEventListener('submit', function(
   this.reset();
 });
 
-// Profil
+// Profile
 document.getElementById('profil-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const nom = document.getElementById('nomEntreprise').value;
