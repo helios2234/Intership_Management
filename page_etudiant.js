@@ -1,6 +1,6 @@
-// fichier : page_etudiant.js
+// file : page_etudiant.js
 
-// Navigation dynamique
+// dynamic Navigation 
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll(".window");
 
@@ -21,7 +21,7 @@ navLinks.forEach(link => {
   });
 });
 
-// Afficher par défaut la première section
+// show first section by default
 sections.forEach((section, index) => {
   section.style.display = index === 0 ? "block" : "none";
 });
