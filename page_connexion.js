@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       input.style.backgroundColor = "";
     });
   });
-
+//since page is in french code as connexion
   const form = document.getElementById("loginForm");
   form.addEventListener("submit", e => {
     const button = form.querySelector("button");
