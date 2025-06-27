@@ -1,20 +1,20 @@
-// Script simple pour gérer la mise en place des animations et effets si besoin
+// script to manage the implementation of effects and animations if needed
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Ici on pourrait ajouter des effets ou interactions supplémentaires
-  // Exemple : focus automatique sur la section "about"
+  // here we can add additional effects
+  // Example : focus on the "about" section
   const aboutSection = document.getElementById('about');
   if (aboutSection) {
     aboutSection.focus();
   }
 
-  // Optionnel : scroll smooth is enabled via CSS scroll-behavior
+  // Optional : smooth scroll is enabled via CSS scroll-behavior
 });
-// Quand la page est complètement chargée
+// for a fully loaded page
 window.addEventListener('load', () => {
   const citationSection = document.getElementById('citation');
   if (citationSection) {
-    // Scroll smooth vers la section citation
+    // smooth scroll
     citationSection.scrollIntoView({ behavior: 'smooth' });
   }
 });
