@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Publier une offre
+  // give an offer
   const publierForm = document.getElementById('publier-form');
   const listeOffres = document.getElementById('liste-offres');
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Gérer les candidatures
+  // manage applications
   const candidaturesForm = document.getElementById('candidatures-form');
   const listeCandidatures = document.getElementById('liste-candidatures');
 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Suivi des stagiaires
+  // monitor the interns
   const stagiairesForm = document.getElementById('stagiaires-form');
   const listeStagiaires = document.getElementById('liste-stagiaires');
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Évaluer les étudiants
+  // evaluate the students
   const evaluationsForm = document.getElementById('evaluations-form');
   const listeEvaluations = document.getElementById('liste-evaluations');
 
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Gérer profil
+  // manage profile
   const profilForm = document.getElementById('profil-form');
   const listeProfil = document.getElementById('liste-profil');
 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Optionnel : gestion active des liens de navigation
+  // Optional :management of navigation links
   const navLinks = document.querySelectorAll('nav ul li a');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
