@@ -1,4 +1,4 @@
-/* Variables */
+
 :root {
   --primary: #4361ee;
   --primary-dark: #3a56d4;
@@ -15,7 +15,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Réinitialisation */
+
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +31,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Sidebar */
+
 .admin-sidebar {
   width: var(--sidebar-width);
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -136,7 +136,6 @@ body {
   margin-right: 0.8rem;
 }
 
-/* Main content */
 .admin-content {
   flex: 1;
   margin-left: var(--sidebar-width);
@@ -248,7 +247,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* Stats grid */
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -302,7 +301,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* Dashboard sections */
+
 .dashboard-section {
   margin-top: 2rem;
   border-top: 1px solid var(--light-gray);
@@ -345,7 +344,7 @@ body {
   background: var(--light);
 }
 
-/* Activity list */
+
 .activity-list {
   display: flex;
   flex-direction: column;
@@ -392,7 +391,7 @@ body {
   color: var(--gray);
 }
 
-/* Responsive */
+
 @media (max-width: 992px) {
   .admin-sidebar {
     width: 70px;
