@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notre Équipe - Gestion de Stages</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    p.header-subtitle {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    .team-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .member-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 20px;
+      transform: scale(1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .member-card.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.5s ease-out;
+    }
+
+    .member-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+    }
+
+    .member-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .member-card h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+    }
+
+    .member-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Notre Équipe</h1>
+  <p class="header-subtitle">Les visages derrière la plateforme Gestion de Stages</p>
+</header>
+
+<section class="team-section">
+  <div class="team-grid">
+    <!-- Membre 1 -->
+    <div class="member-card">
+      <img src="images\menbre1.png" alt="Photo Membre 1">
+      <h3>Habib Tefack</h3>
+      <p>Scrum master</p>
+    </div>
+
+    <!-- Membre 2 -->
+    <div class="member-card">
+      <img src="images\membre2.jpg" alt="Photo Membre 2">
+      <h3>HEINNEMANN NTUBE</h3>
+      <p></p>
+    </div>
+
+    <!-- Membre 3 -->
+    <div class="member-card">
+      <img src="images\membre3.jpg" alt="Photo Membre 3">
+      <h3>DJOKO VANNECK</h3>
+      <p>Front-end</p>
+    </div>
+
+    <div class="member-card">
+      <img src="images\member6.jpg" alt="Photo Member 6">
+      <h3>BYRON AFESSE </h3>
+      <p></p>
+    </div>
+
+    <div class="member-card">
+      <img src="images\member5.jpg" alt="Photo Membre 5">
+      <h3>AICHA KIANA</h3>
+      <p></p>
+    </div>
+
+    <div class="member-card">
+      <img src="images\member4.jpg" alt="Photo Membre 6">
+      <h3>MARY LUCY AYUKOTANG SILLA</h3>
+      <p></p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Gestion de Stages. Tous droits réservés.
+</footer>
+
+<script>
+  // Animation fade-in lors du scroll
+  const cards = document.querySelectorAll('.member-card');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+</body>
+</html>
