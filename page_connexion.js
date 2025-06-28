@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.disabled = true;
     button.style.opacity = "0.6";
 
-    const userType = document.getElementById("user_type").value;
+    const userType = document.getElementById("connexion").value;
     if (userType == "etudiant") {
       window.location.href = "page_etudiants.html";
     } else if (userType == "entreprise") {
